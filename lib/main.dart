@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "activities/schoolmap.dart";
 void main() {
   runApp(MyApp());
 }
@@ -77,22 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           InkWell(
               onTap: (){
-                showDialog(context: context, builder: (builderkun){
-                  return AlertDialog(
-                    title:Text("校内マップ"),
-                    content:Text("クリックしましたね??"),
-                    actions: <Widget>[
-                      FlatButton(
-                        child: Text("cancel"),
-                        onPressed: ()=>Navigator.pop(context),
-                      ),
-                      FlatButton(
-                        child: Text("OK"),
-                        onPressed: ()=>Navigator.pop(context),
-                      )
-                    ],
-                  );
-                });
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
               },
               child:Card(
                 child:Column(
@@ -110,11 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
     );
   }
 }
