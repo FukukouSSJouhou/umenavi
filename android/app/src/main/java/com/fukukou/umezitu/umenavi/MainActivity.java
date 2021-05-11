@@ -1,4 +1,4 @@
-package com.fukukou.umezitu.umezitu;
+package com.fukukou.umezitu.umenavi;
 
 import io.flutter.embedding.android.FlutterActivity;
 
