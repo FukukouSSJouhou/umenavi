@@ -51,14 +51,73 @@ class _UmeyokoPageState extends State<UmeyokoPage>{
                 InkWell(
                     child:DataTable(
                       columns: <DataColumn>[
-                        DataColumn(label: Text("商品名")),
-                        DataColumn(label: Text("価格"))
+                        DataColumn(label: Text("商品名",
+    style: TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+    ),)),
+                        DataColumn(label: Text("価格",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            )))
                       ],
                       rows:<DataRow>[
                         DataRow(
                           cells:<DataCell>[
-                            DataCell(Text("焼きそば")),
+                            DataCell(Text("焼きそば",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ))),
+                            DataCell(Text("￥200",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                )))
                           ]
+                        ),
+                        DataRow(
+                            cells:<DataCell>[
+                              DataCell(Text("フランクフルト",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ))),
+                              DataCell(Text("￥150",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  )))
+                            ]
+                        ),
+                        DataRow(
+                            cells:<DataCell>[
+                              DataCell(Text("パンケーキ",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ))),
+                              DataCell(Text("￥200",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  )))
+                            ]
+                        ),
+                        DataRow(
+                            cells:<DataCell>[
+                              DataCell(Text("かき氷",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ))),
+                              DataCell(Text("￥100",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  )))
+                            ]
                         )
                       ]
                     )
