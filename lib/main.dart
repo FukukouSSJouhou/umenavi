@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
+import "activities/umeyoko.dart";
 void main() {
   runApp(MyApp());
 }
