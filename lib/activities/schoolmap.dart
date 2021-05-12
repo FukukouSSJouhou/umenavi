@@ -10,9 +10,13 @@ class _SchoolMapPageState extends State<SchoolMapPage>{
       appBar:new AppBar(
         title:new Text("School Map"),
       ),
-      body: Center(
-        child: Text("Success??"),
-      ),
+      body: ListView(
+        children: [
+          InkWell(
+            child:Image.asset("images/maps/1F.png")
+          )
+        ],
+      )
     );
   }
 }
