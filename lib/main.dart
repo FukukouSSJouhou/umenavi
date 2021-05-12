@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),          InkWell(
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
               },
               child:Card(
                   child:Column(
