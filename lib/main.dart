@@ -82,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                 child:Column(
                   children: <Widget>[
+                    Image.asset("images/icon/iconmonstr-map-2-240.png"),
                     Container(
                       margin: EdgeInsets.all(10.0),
                       child:ListTile(
