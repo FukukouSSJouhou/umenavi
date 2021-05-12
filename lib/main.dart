@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "activities/schoolmap.dart";
+import "activities/stage_show.dart";
 void main() {
   runApp(MyApp());
 }
@@ -93,7 +94,44 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 )
               )
-            )
+            ),
+          InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      Image.asset("images/icon/icon_158931_256.png"),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ステージ発表"),
+                            subtitle: Text("発表の予定が表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),          InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      Image.asset("images/icon/icon_111651_256.png"),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ウメ横"),
+                            subtitle: Text("飯の値段が書いてあります。"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          )
         ],
       ),
 
