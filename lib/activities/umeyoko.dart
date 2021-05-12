@@ -7,7 +7,7 @@ class _UmeyokoPageState extends State<UmeyokoPage>{
   Widget build(BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
-        title:Text("UMEYOKO")
+        title:Text("ウメ横")
       ),
       body:ListView(
         children:[
@@ -30,25 +30,25 @@ class _UmeyokoPageState extends State<UmeyokoPage>{
                       "注意  ウメ横は食券制です",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 40,
+                          fontSize: 20,
                           color:Colors.red
                         )
                     )
                 ),
                 Container(
-                    margin: EdgeInsets.only(top:47.0,bottom: 30.0),
+                    margin: EdgeInsets.only(top:47.0,bottom: 30.0,right:20.0,left:20.0),
                     child:Text(
                         "第一体育館後方にて食券の購入、\n商品の受け取りができます。\n"
                             "(数に限りがございます。なくなり次第、\n終了となりますのでご了承ください。)",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 15,
                             color:Colors.grey
                         )
                     )
                 ),
+                    InkWell(
 
-                InkWell(
                     child:DataTable(
                       columns: <DataColumn>[
                         DataColumn(label: Text("商品名",
@@ -128,7 +128,7 @@ class _UmeyokoPageState extends State<UmeyokoPage>{
                         "かき氷のシロップは、いちご、ブルーハワイ、\n抹茶からお選びください。",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 15,
                             color:Colors.grey
                         )
                     )

@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const locale = Locale("ja", "JP");
     return MaterialApp(
       title: 'UMENAVI',
       theme: ThemeData(
@@ -24,6 +26,16 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+
+      locale: locale,
+      localizationsDelegates:  [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales:  [
+        locale,
+      ],
       home: MyHomePage(title: 'UMENAVI'),
     );
   }
