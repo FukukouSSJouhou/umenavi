@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
+import 'activities/minigame.dart';
 void main() {
   runApp(MyApp());
 }
@@ -138,6 +139,24 @@ class _MyHomePageState extends State<MyHomePage> {
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("ウメ横"),
+                            subtitle: Text("飯の値段が書いてあります。"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGame1()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      Image.asset("images/icon/icon_111651_256.png"),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("MiniGame"),
                             subtitle: Text("飯の値段が書いてあります。"),
                           )
                       )
