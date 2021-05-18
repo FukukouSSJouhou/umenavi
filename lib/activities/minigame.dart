@@ -37,6 +37,7 @@ class _MiniGame1State extends State<MiniGame1>{
         title: new Text("MiniGame"),
       ),
       body:GridView.count(
+          shrinkWrap: true,
         crossAxisCount: 5,
     children: <Widget>[
       new miniGameTapkun(No1State,() {
