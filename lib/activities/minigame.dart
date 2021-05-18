@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:umezitu/widgets/minigameTapkun.dart";
 class MiniGame1 extends StatefulWidget{
   @override
   _MiniGame1State createState()=>new _MiniGame1State();
@@ -13,7 +14,7 @@ class _MiniGame1State extends State<MiniGame1>{
       body:GridView.count(
         crossAxisCount: 5,
     children: <Widget>[
-      InkWell(
+      miniGameTapkun(
         onTap:() {
           showDialog(context: context, builder: (context){
             return SimpleDialog(
@@ -27,13 +28,9 @@ class _MiniGame1State extends State<MiniGame1>{
             );
           });
         },
-        child: Center(child:Text("1",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 40,
-            )),
-      )),
-      InkWell(
+        text:"1"
+      ),
+      miniGameTapkun(
         onTap:() {
           showDialog(context: context, builder: (context){
             return SimpleDialog(
@@ -47,11 +44,7 @@ class _MiniGame1State extends State<MiniGame1>{
             );
           });
         },
-        child: Center(child:Text("2",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 40,
-        ),)),
+        text:"2"
       )
     ]
       )
