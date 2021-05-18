@@ -1,5 +1,6 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
@@ -97,7 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                 child:Column(
                   children: <Widget>[
-                    Image.asset("images/icon/iconmonstr-map-2-240.png"),
+                    SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),
                     Container(
                       margin: EdgeInsets.all(10.0),
                       child:ListTile(
@@ -116,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      Image.asset("images/icon/icon_158931_256.png"),
+                      SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -134,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      Image.asset("images/icon/icon_111651_256.png"),
+                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -152,12 +154,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      Image.asset("images/icon/icon_111651_256.png"),
+                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "MiniGame",),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("MiniGame"),
-                            subtitle: Text("飯の値段が書いてあります。"),
+                            subtitle: Text("ミニゲーム(クソゲー)"),
                           )
                       )
                     ],
