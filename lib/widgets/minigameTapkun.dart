@@ -18,7 +18,19 @@ class _miniGameTapkunState extends State<miniGameTapkun>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return InkWell(
+    Color buttoncolor;
+    Color textcolor;
+    if(widget.text == "On"){
+      buttoncolor=Colors.yellow;
+      textcolor=Colors.black;
+    }else{
+      buttoncolor=Colors.black;
+      textcolor=Colors.white;
+    }
+    return new Material(
+      type:MaterialType.button,
+        color: buttoncolor,
+        child:InkWell(
       onTap: (){
         widget.onTap();
       },
@@ -26,8 +38,9 @@ class _miniGameTapkunState extends State<miniGameTapkun>{
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 40,
+            color: textcolor,
           )),
       )
-    );
+    ));
   }
 }
