@@ -5,6 +5,8 @@ class MiniGame1 extends StatefulWidget{
   _MiniGame1State createState()=>new _MiniGame1State();
 }
 class _MiniGame1State extends State<MiniGame1>{
+  String No1State="On";
+  String No2State="On";
   @override
   Widget build(BuildContext context){
     return new Scaffold(
@@ -17,6 +19,11 @@ class _MiniGame1State extends State<MiniGame1>{
       miniGameTapkun(
         onTap:() {
           showDialog(context: context, builder: (context){
+            if(No2State == "On"){
+              No2State="Off";
+            }else{
+              No2State="On";
+            }
             return SimpleDialog(
               title: Text("Oh"),
               children: [
@@ -28,10 +35,15 @@ class _MiniGame1State extends State<MiniGame1>{
             );
           });
         },
-        text:"1"
+        text:No1State
       ),
       miniGameTapkun(
         onTap:() {
+          if(No1State == "On"){
+            No1State="Off";
+          }else{
+            No1State="On";
+          }
           showDialog(context: context, builder: (context){
             return SimpleDialog(
               title: Text("Oh"),
@@ -44,7 +56,7 @@ class _MiniGame1State extends State<MiniGame1>{
             );
           });
         },
-        text:"2"
+        text:No2State
       )
     ]
       )
