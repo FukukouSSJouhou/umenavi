@@ -13,7 +13,7 @@ class _MiniGame1State extends State<MiniGame1>{
   String No6State="Off";
   String No7State="Off";
   String No8State="Off";
-  String No9State="Off";
+  String No9State="On";
   String No10State="Off";
   String No11State="Off";
   String No12State="Off";
