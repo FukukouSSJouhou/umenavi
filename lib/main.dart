@@ -5,6 +5,7 @@ import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/minigame.dart';
+import "package:umezitu/activities/copyright.dart";
 void main() {
   runApp(MyApp());
 }
@@ -160,6 +161,24 @@ class _MyHomePageState extends State<MyHomePage> {
                           child:ListTile(
                             title:Text("MiniGame"),
                             subtitle: Text("ミニゲーム(クソゲー)"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => CopyRightPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "Copyright",),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("Copyright"),
+                            subtitle: Text("著作権情報"),
                           )
                       )
                     ],
