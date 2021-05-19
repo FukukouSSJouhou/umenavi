@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:umezitu/widgets/minigameTapkun.dart";
+import "package:umezitu/activities/PazzleScore.dart";
 class MiniGame1 extends StatefulWidget{
   @override
   _MiniGame1State createState()=>new _MiniGame1State();
@@ -93,6 +94,7 @@ class _MiniGame1State extends State<MiniGame1>{
         No23State=="On" &&
         No24State=="On" &&
         No25State=="On" ){
+      /*
       showDialog(context: context, builder: (context){
         return AlertDialog(
           title: Text("Clear"),
@@ -110,13 +112,17 @@ class _MiniGame1State extends State<MiniGame1>{
               child: Text("OK"),
               onPressed: (){
                 reset_state();
-                Navigator.pop(context);
+                //Navigator.pop(context);
 
                 },
         ),
         ]
-        );
-      });
+        );}
+      });*/
+      int stepbuff=stepcountkun;
+      reset_state();
+      Navigator.push(this.context,
+      MaterialPageRoute(builder: (context) => PazzleScorePage(stepbuff)));
     }
   }
   @override
@@ -958,7 +964,33 @@ class _MiniGame1State extends State<MiniGame1>{
       },
       )
     ]
-      )
+      ),
+        Center(
+          child:Container(
+            padding:EdgeInsets.all(30.0),
+          child:RaisedButton(
+            child: Text("Reset"),
+            color:Colors.lightBlueAccent,
+            onPressed: (){
+                showDialog(context: context, builder: (builder){
+                  return AlertDialog(
+                    title:Text("Reset"),
+                    content: Text("Will you reset?"),
+                    actions: <Widget>[
+                      MaterialButton(child:Text("Cancel"),
+                      onPressed: ()=>Navigator.pop(context),),
+                      MaterialButton(child:Text("Ok"),
+                      onPressed: (){
+                        reset_state();
+                        Navigator.pop(context);
+                      },)
+                    ],
+                  );
+                });
+              },
+          )
+          ),
+        )
     ]));
   }
 }
