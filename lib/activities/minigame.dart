@@ -30,18 +30,117 @@ class _MiniGame1State extends State<MiniGame1>{
   String No23State="Off";
   String No24State="Off";
   String No25State="Off";
+  void reset_state(){
+    setState(() {
+
+      No1State="Off";
+      No2State="Off";
+      No3State="Off";
+      No4State="Off";
+      No5State="Off";
+      No6State="Off";
+      No7State="Off";
+      No8State="Off";
+      No9State="On";
+      No10State="Off";
+      No11State="Off";
+      No12State="Off";
+      No13State="Off";
+      No14State="Off";
+      No15State="Off";
+      No16State="Off";
+      No17State="Off";
+      No18State="Off";
+      No19State="Off";
+      No20State="Off";
+      No21State="Off";
+      No22State="Off";
+      No23State="Off";
+      No24State="Off";
+      No25State="Off";
+      stepcountkun=0;
+    });
+  }
+  int stepcountkun=0;
+  void countup(){
+    setState(() {
+      stepcountkun++;
+    });
+  }
+  void check_clear(){
+    if(No1State=="On" &&
+        No2State=="On" &&
+        No3State=="On" &&
+        No4State=="On" &&
+        No5State=="On" &&
+        No6State=="On" &&
+        No7State=="On" &&
+        No8State=="On" &&
+        No9State=="On" &&
+        No10State=="On" &&
+        No11State=="On" &&
+        No12State=="On" &&
+        No13State=="On" &&
+        No14State=="On" &&
+        No15State=="On" &&
+        No16State=="On" &&
+        No17State=="On" &&
+        No18State=="On" &&
+        No19State=="On" &&
+        No20State=="On" &&
+        No21State=="On" &&
+        No22State=="On" &&
+        No23State=="On" &&
+        No24State=="On" &&
+        No25State=="On" ){
+      showDialog(context: context, builder: (context){
+        return AlertDialog(
+          title: Text("Clear"),
+          content: Text("Clear Yeah!!"),
+          actions: <Widget>[
+            MaterialButton(
+              child: Text("Cancel"),
+              onPressed: (){
+
+                reset_state();
+                Navigator.pop(context);
+                },
+            ),
+            MaterialButton(
+              child: Text("OK"),
+              onPressed: (){
+                reset_state();
+                Navigator.pop(context);
+
+                },
+        ),
+        ]
+        );
+      });
+    }
+  }
   @override
   Widget build(BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("MiniGame"),
       ),
-      body:GridView.count(
+      body:ListView(children:[
+        Center(
+          child: Padding(
+      padding:EdgeInsets.all(30.0),
+      child:Text("Step : " + stepcountkun.toString(),
+          style:TextStyle(
+            fontSize: 40
+          ))),
+
+        ),
+        GridView.count(
           shrinkWrap: true,
         crossAxisCount: 5,
     children: <Widget>[
       new miniGameTapkun(No1State,() {
-        setState(() {
+        setState(() { countup();
 
           if (No1State == "On") {
             No1State = "Off";
@@ -61,12 +160,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No6State = "On";
           }
         });
+
+        check_clear();
       }),
       new miniGameTapkun(
         No2State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No1State == "On"){
       No1State = "Off";
           }else{
@@ -90,13 +191,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No7State = "On";
           }
         });
+
+        check_clear();
         },
       ),
       new miniGameTapkun(
         No3State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No4State == "On"){
             No4State = "Off";
           }else{
@@ -120,13 +223,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No8State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No4State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No4State == "On"){
             No4State = "Off";
           }else{
@@ -150,12 +255,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No9State = "On";
           }
         });
+
+        check_clear();
       },
       ),      new miniGameTapkun(
         No5State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No4State == "On"){
             No4State = "Off";
           }else{
@@ -174,12 +281,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No10State = "On";
           }
         });
+
+        check_clear();
       },
       ),new miniGameTapkun(
         No6State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No1State == "On"){
             No1State = "Off";
           }else{
@@ -203,13 +312,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No11State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No7State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No2State == "On"){
             No2State = "Off";
           }else{
@@ -238,12 +349,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No8State = "On";
           }
         });
+
+        check_clear();
       },
       ),      new miniGameTapkun(
         No8State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No3State == "On"){
             No3State = "Off";
           }else{
@@ -272,12 +385,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No8State = "On";
           }
         });
+
+        check_clear();
       },
       ),new miniGameTapkun(
         No9State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No4State == "On"){
             No4State = "Off";
           }else{
@@ -306,13 +421,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No8State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No10State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No5State == "On"){
             No5State = "Off";
           }else{
@@ -336,13 +453,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No15State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No11State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No6State == "On"){
             No6State = "Off";
           }else{
@@ -366,13 +485,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No16State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No12State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No7State == "On"){
             No7State = "Off";
           }else{
@@ -401,13 +522,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No17State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No13State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No8State == "On"){
             No8State = "Off";
           }else{
@@ -436,13 +559,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No18State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No14State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No9State == "On"){
             No9State = "Off";
           }else{
@@ -471,13 +596,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No19State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No15State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No10State == "On"){
             No10State = "Off";
           }else{
@@ -501,13 +628,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No20State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No16State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No11State == "On"){
             No11State = "Off";
           }else{
@@ -531,13 +660,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No21State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No17State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No12State == "On"){
             No12State = "Off";
           }else{
@@ -566,13 +697,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No22State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No18State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No13State == "On"){
             No13State = "Off";
           }else{
@@ -601,13 +734,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No23State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No19State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No14State == "On"){
             No14State = "Off";
           }else{
@@ -636,13 +771,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No24State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No20State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No15State == "On"){
             No15State = "Off";
           }else{
@@ -666,13 +803,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No25State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No21State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No16State == "On"){
             No16State = "Off";
           }else{
@@ -691,13 +830,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No21State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No22State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No17State == "On"){
             No17State = "Off";
           }else{
@@ -721,12 +862,14 @@ class _MiniGame1State extends State<MiniGame1>{
             No23State = "On";
           }
         });
+
+        check_clear();
       },
       ),      new miniGameTapkun(
         No23State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No18State == "On"){
             No18State = "Off";
           }else{
@@ -750,13 +893,15 @@ class _MiniGame1State extends State<MiniGame1>{
             No23State = "On";
           }
         });
+
+        check_clear();
       },
       ),
       new miniGameTapkun(
         No24State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No19State == "On"){
             No19State = "Off";
           }else{
@@ -780,6 +925,8 @@ class _MiniGame1State extends State<MiniGame1>{
             No23State = "On";
           }
         });
+
+        check_clear();
       },
       ),
 
@@ -787,7 +934,7 @@ class _MiniGame1State extends State<MiniGame1>{
         No25State,() {
 
 
-        setState(() {
+        setState(() { countup();
           if(No20State == "On"){
             No20State = "Off";
           }else{
@@ -806,10 +953,12 @@ class _MiniGame1State extends State<MiniGame1>{
             No24State = "On";
           }
         });
+
+        check_clear();
       },
       )
     ]
       )
-    );
+    ]));
   }
 }
