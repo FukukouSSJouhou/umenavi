@@ -50,7 +50,6 @@ class _PazzleScorePageState extends State<PazzleScorePage>{
         Navigator.pop(context);
       },
       child: Text("Reset"),
-      backgroundColor: Colors.purple,
     ),
     );
   }

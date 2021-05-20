@@ -5,7 +5,7 @@ import 'package:package_info/package_info.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
-import 'activities/minigame.dart';
+import 'activities/miniGame.dart';
 String applicationName= "UMENAVI";
 String applicationVersion= "20210520beta1";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
@@ -154,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),InkWell(
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGame1()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGamePage()));
               },
               child:Card(
                   child:Column(
