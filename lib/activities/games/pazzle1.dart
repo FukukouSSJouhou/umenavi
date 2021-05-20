@@ -159,7 +159,6 @@ class _Pazzle1State extends State<Pazzle1>{
   }
   @override
   Widget build(BuildContext context){
-    reset_state();
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Pazzle1"),
