@@ -15,7 +15,7 @@ class _Pazzle1State extends State<Pazzle1>{
   String No6State="Off";
   String No7State="Off";
   String No8State="Off";
-  String No9State="On";
+  String No9State="Off";
   String No10State="Off";
   String No11State="Off";
   String No12State="Off";
@@ -99,6 +99,7 @@ class _Pazzle1State extends State<Pazzle1>{
       stepcountkun++;
     });
   }
+
   void check_clear(){
     if(No1State=="On" &&
         No2State=="On" &&
@@ -158,6 +159,7 @@ class _Pazzle1State extends State<Pazzle1>{
   }
   @override
   Widget build(BuildContext context){
+    reset_state();
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Pazzle1"),
