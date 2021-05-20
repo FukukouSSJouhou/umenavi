@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import "package:umezitu/widgets/minigameTapkun.dart";
-import "package:umezitu/activities/PazzleScore.dart";
+import "package:UMENAVI/widgets/minigameTapkun.dart";
+import "package:UMENAVI/activities/PazzleScore.dart";
 class MiniGame1 extends StatefulWidget{
   @override
   _MiniGame1State createState()=>new _MiniGame1State();

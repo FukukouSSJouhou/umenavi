@@ -1,11 +1,14 @@
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:package_info/package_info.dart';
 import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/minigame.dart';
-import "package:umezitu/activities/copyright.dart";
+String applicationName= "UMENAVI";
+String applicationVersion= "20210520beta1";
+String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
 }
@@ -84,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -168,17 +172,24 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),InkWell(
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => CopyRightPage()));
+                showAboutDialog(
+                  context:context,
+                  applicationName: applicationName,
+                  applicationVersion: applicationVersion,
+                  applicationIcon: FlutterLogo(),
+                  applicationLegalese: applicationLegalese
+
+                );
               },
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "Copyright",),
+                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "About",),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
-                            title:Text("Copyright"),
-                            subtitle: Text("著作権情報"),
+                            title:Text("About"),
+                            subtitle: Text("このアプリについて"),
                           )
                       )
                     ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:umezitu/activities/schoolmap2.dart';
-import 'package:umezitu/activities/schoolmap3.dart';
-import 'package:umezitu/activities/schoolmap4.dart';
+import 'package:UMENAVI/activities/schoolmap2.dart';
+import 'package:UMENAVI/activities/schoolmap3.dart';
+import 'package:UMENAVI/activities/schoolmap4.dart';
 class SchoolMapPage extends StatefulWidget{
   @override
   _SchoolMapPageState createState()=>new _SchoolMapPageState();

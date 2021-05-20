@@ -1,5 +1,5 @@
-name: umezitu
-description: A new Flutter project.
+name: UMENAVI
+description: UMENAVI
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flame: 0.29.4
+  package_info: 2.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
