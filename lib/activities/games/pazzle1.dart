@@ -12,7 +12,7 @@ class _Pazzle1State extends State<Pazzle1>{
   String No3State="Off";
   String No4State="Off";
   String No5State="Off";
-  String No6State="Off";
+  String No6State="On";
   String No7State="Off";
   String No8State="Off";
   String No9State="Off";
@@ -163,6 +163,7 @@ class _Pazzle1State extends State<Pazzle1>{
       appBar: new AppBar(
         title: new Text("Pazzle1"),
       ),
+      backgroundColor: Colors.blue,
       body:ListView(children:[
         Center(
           child: Padding(
