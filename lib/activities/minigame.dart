@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:UMENAVI/activities/games/pazzle1.dart';
+import "package:slidingpuzzle/Board.dart";
+class SlidePuzzlePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext buildc){
+    return MaterialApp(
+      title: "Sliding Puzzle",
+      debugShowCheckedModeBanner: false,
+      home:Board()
+    );
+  }
+}
 class MiniGamePage extends StatefulWidget{
   @override
   _MiniGamePageState createState()=>_MiniGamePageState();
@@ -28,6 +39,26 @@ class _MiniGamePageState extends State<MiniGamePage>{
                           child:ListTile(
                             title:Text("パズルゲーム君"),
                             subtitle: Text("クソゲーですを"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),
+          InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SlidePuzzlePage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                        semanticsLabel: 'map',),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("Slide Pazzle"),
+                            subtitle: Text("うんこもらし"),
                           )
                       )
                     ],
