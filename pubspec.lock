@@ -331,8 +331,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: master
-      resolved-ref: "54b47def3685849fcac57638235a2ee550c5487e"
+      ref: "202105231937"
+      resolved-ref: "304928c52157d83ad0499b3fa8a5fc160dc05295"
       url: "https://github.com/kokkiemouse/sliding_puzzle.git"
     source: git
     version: "1.0.0+1"

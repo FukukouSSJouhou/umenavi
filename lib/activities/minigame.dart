@@ -47,7 +47,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
           ),
           InkWell(
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SlidePuzzlePage()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => Board()));
               },
               child:Card(
                   child:Column(

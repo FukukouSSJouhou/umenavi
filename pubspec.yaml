@@ -36,7 +36,7 @@ dependencies:
   slidingpuzzle:
     git:
       url: "https://github.com/kokkiemouse/sliding_puzzle.git"
-      ref: "master"
+      ref: "202105231937"
 
   pedantic: ^1.11.0
   provider: ^4.0.0
@@ -65,6 +65,7 @@ flutter:
     - images/maps/
     - images/icon/
     - images/others/
+    - images/kousyou/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
