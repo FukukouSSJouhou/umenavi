@@ -7,7 +7,7 @@ import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/miniGame.dart';
 String applicationName= "UMENAVI";
-String applicationVersion= "20210520beta1";
+String applicationVersion= "20210525beta1";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
