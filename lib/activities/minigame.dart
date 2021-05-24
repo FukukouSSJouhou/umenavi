@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:UMENAVI/activities/games/pazzle1.dart';
 import "package:slidingpuzzle/Board.dart";
+import 'package:tetris/main.dart';
 class SlidePuzzlePage extends StatelessWidget {
   @override
   Widget build(BuildContext buildc){
@@ -58,6 +59,25 @@ class _MiniGamePageState extends State<MiniGamePage>{
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("Slide Pazzle"),
+                            subtitle: Text("うんこもらし"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),InkWell(
+              onTap: (){
+                Navigator.pushReplacement(context,MaterialPageRoute(builder: (conkun) => MyApp()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                        semanticsLabel: 'map',),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("Tetris Pazzle"),
                             subtitle: Text("うんこもらし"),
                           )
                       )

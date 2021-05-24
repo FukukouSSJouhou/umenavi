@@ -168,6 +168,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.2"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.4"
   image:
     dependency: transitive
     description:
@@ -217,6 +231,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  overlay_support:
+    dependency: transitive
+    description:
+      name: overlay_support
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   package_info:
     dependency: "direct main"
     description:
@@ -272,7 +293,7 @@ packages:
       name: path_provider_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.0"
   path_provider_windows:
     dependency: transitive
     description:
@@ -307,7 +328,7 @@ packages:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "1.0.3"
   process:
     dependency: transitive
     description:
@@ -321,7 +342,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.3"
+    version: "4.3.2+2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -336,6 +357,34 @@ packages:
       url: "https://github.com/kokkiemouse/sliding_puzzle.git"
     source: git
     version: "1.0.0+1"
+  soundpool:
+    dependency: transitive
+    description:
+      name: soundpool
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.3"
+  soundpool_macos:
+    dependency: transitive
+    description:
+      name: soundpool_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.7"
+  soundpool_platform_interface:
+    dependency: transitive
+    description:
+      name: soundpool_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
+  soundpool_web:
+    dependency: transitive
+    description:
+      name: soundpool_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   source_span:
     dependency: transitive
     description:
@@ -385,6 +434,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  tetris:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: c1df27772d6237484764bc28b66a1db5578f05fb
+      url: "https://github.com/boyan01/flutter-tetris.git"
+    source: git
+    version: "1.0.0+1"
   typed_data:
     dependency: transitive
     description:
