@@ -439,8 +439,8 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: c1df27772d6237484764bc28b66a1db5578f05fb
-      url: "https://github.com/boyan01/flutter-tetris.git"
+      resolved-ref: "77869b89d1684f932881eb08e8c4049c18ba322a"
+      url: "https://github.com/kokkiemouse/flutter-tetris.git"
     source: git
     version: "1.0.0+1"
   typed_data:
