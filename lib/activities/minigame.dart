@@ -33,8 +33,10 @@ class _MiniGamePageState extends State<MiniGamePage>{
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
-                        semanticsLabel: 'map',),
+                      Icon(
+                        Icons.extension_outlined,
+                        size:250,
+                      ),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(

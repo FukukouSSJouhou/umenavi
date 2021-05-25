@@ -7,7 +7,7 @@ import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/miniGame.dart';
 String applicationName= "UMENAVI";
-String applicationVersion= "20210525beta1";
+String applicationVersion= "20210526beta1";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
@@ -159,7 +159,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "MiniGame",),
+                    Icon(
+                    Icons.extension_outlined,
+                      size:250,
+                  ),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
