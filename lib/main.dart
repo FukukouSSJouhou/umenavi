@@ -159,10 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                    Icon(
-                    Icons.extension_outlined,
-                      size:250,
-                  ),
+                      SvgPicture.asset("images/icon/79FAA242-BF7C-4BA7-995D-0F39B4E2A50B.svg",semanticsLabel:"GAME"),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
