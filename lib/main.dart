@@ -100,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: (){
           _incrementCounter();
           if(_counter > 24){
+            HapticFeedback.heavyImpact();
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => SecretPage()));
           }
         },
@@ -110,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
               },
               child:Card(
@@ -149,6 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),          InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
               },
               child:Card(
@@ -167,6 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGamePage()));
               },
               child:Card(
@@ -185,6 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           ),InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 showAboutDialog(
                   context:context,
                   applicationName: applicationName,

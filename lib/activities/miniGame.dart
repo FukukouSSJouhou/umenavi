@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:UMENAVI/activities/games/pazzle1.dart';
 import "package:slidingpuzzle/Board.dart";
@@ -28,6 +29,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
         children: <Widget>[
           InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => Pazzle1()));
               },
               child:Card(
@@ -50,6 +52,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
           ),
           InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => Board()));
               },
               child:Card(
@@ -69,6 +72,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
               )
           ),InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.pushReplacement(context,MaterialPageRoute(builder: (conkun) => MyApp()));
               },
               child:Card(
