@@ -105,7 +105,7 @@ packages:
       name: ffi
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.1"
   file:
     dependency: transitive
     description:
@@ -272,7 +272,7 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   path_provider_linux:
     dependency: transitive
     description:
@@ -342,7 +342,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.2+2"
+    version: "4.3.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -438,8 +438,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: master
-      resolved-ref: "77869b89d1684f932881eb08e8c4049c18ba322a"
+      ref: "202105311749"
+      resolved-ref: "8b959c53b57153b1302d68b493a49bd032802ad4"
       url: "https://github.com/kokkiemouse/flutter-tetris.git"
     source: git
     version: "1.0.0+1"
