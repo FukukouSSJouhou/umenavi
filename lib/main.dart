@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,6 +7,8 @@ import "activities/schoolmap.dart";
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/miniGame.dart';
+import "widgets/CustomAppBar.dart";
+import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
 String applicationVersion= "20210526beta1";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
@@ -89,10 +92,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: CustomAppBar(
+        appBar:  AppBar(
+
+          title: Text(widget.title),
+        ),
+        onTap: (){
+          _incrementCounter();
+          if(_counter > 24){
+            Navigator.push(context,MaterialPageRoute(builder: (conkun) => SecretPage()));
+          }
+        },
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
       ),
       body: ListView(
         children: [
@@ -118,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           InkWell(
               onTap: (){
+                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
               },
               child:Card(
