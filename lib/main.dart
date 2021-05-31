@@ -10,7 +10,7 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
-String applicationVersion= "20210526beta1";
+String applicationVersion= "20210531beta2";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
@@ -176,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/79FAA242-BF7C-4BA7-995D-0F39B4E2A50B.svg",semanticsLabel:"GAME"),
+                      SvgPicture.asset("images/icon/games.svg",semanticsLabel:"GAME"),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -195,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   applicationName: applicationName,
                   applicationVersion: applicationVersion,
                   applicationIcon: FlutterLogo(),
-                  applicationLegalese: applicationLegalese
+                  applicationLegalese: applicationLegalese,
 
                 );
               },

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import "package:UMENAVI/widgets/minigameTapkun.dart";
 import "package:UMENAVI/activities/games/PazzleScore.dart";
 import 'dart:math' as math;
+
+import 'package:flutter/services.dart';
 class Pazzle1 extends StatefulWidget{
   @override
   _Pazzle1State createState()=>new _Pazzle1State();
@@ -101,6 +103,8 @@ class _Pazzle1State extends State<Pazzle1>{
   }
 
   void check_clear(){
+
+    HapticFeedback.heavyImpact();
     if(No1State=="On" &&
         No2State=="On" &&
         No3State=="On" &&

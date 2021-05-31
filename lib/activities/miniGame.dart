@@ -43,7 +43,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("パズルゲーム君"),
-                            subtitle: Text("クソゲーですを"),
+                            subtitle: Text("全部をOnにしよう"),
                           )
                       )
                     ],
@@ -64,7 +64,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("Slide Pazzle"),
-                            subtitle: Text("うんこもらし"),
+                            subtitle: Text("スライドパズル\nすごく見づらい"),
                           )
                       )
                     ],
@@ -78,13 +78,13 @@ class _MiniGamePageState extends State<MiniGamePage>{
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                      SvgPicture.asset("images/icon/tetris.svg",
                         semanticsLabel: 'map',),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("Tetris Pazzle"),
-                            subtitle: Text("うんこもらし"),
+                            subtitle: Text("何の変哲もないテトリス"),
                           )
                       )
                     ],
