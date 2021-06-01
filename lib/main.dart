@@ -10,7 +10,7 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
-String applicationVersion= "20210601beta2.2";
+String applicationVersion= "20210601beta3";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
@@ -23,8 +23,7 @@ class MyApp extends StatelessWidget {
     const locale = Locale("ja", "JP");
     return MaterialApp(
       title: 'UMENAVI',
-      /*darkTheme: ThemeData.dark(),
-      */
+      darkTheme: ThemeData.dark(),
       theme:ThemeData(
         primaryColor: Color.fromRGBO(139,0,0,1),
       ),
