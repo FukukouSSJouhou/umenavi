@@ -78,8 +78,8 @@ class _MiniGamePageState extends State<MiniGamePage>{
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/tetris.svg",
-                        semanticsLabel: 'map',),
+                      SvgPicture.asset("images/icon/tetris-svgrepo-com.svg",
+                        semanticsLabel: 'map',height:320,width:320),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
