@@ -104,4 +104,5 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "Icon.png"
+  image_path: "iconumenavi.png"
+  remove_alpha_ios: true
