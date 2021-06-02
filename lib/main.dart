@@ -198,13 +198,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ),InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                showAboutDialog(
+                /*showAboutDialog(
                   context:context,
                   applicationName: applicationName,
                   applicationVersion: applicationVersion,
-                  applicationIcon: FlutterLogo(),
+                  //applicationIcon: FlutterLogo(),
+                  applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
                   applicationLegalese: applicationLegalese,
 
+                );*/
+                showLicensePage(
+                  context:context,
+                  applicationName: applicationName,
+                  applicationVersion: applicationVersion,
+                  //applicationIcon: FlutterLogo(),
+                  applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
+                  applicationLegalese: applicationLegalese,
                 );
               },
               child:Card(
