@@ -71,6 +71,10 @@ flutter:
     - images/others/
     - images/kousyou/
     - assets/
+  fonts:
+    - family: Umenaviicon1
+      fonts:
+        - asset: fonts/Umenaviicon1.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

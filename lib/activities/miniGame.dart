@@ -1,3 +1,4 @@
+import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -58,8 +59,9 @@ class _MiniGamePageState extends State<MiniGamePage>{
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
-                        semanticsLabel: 'map',),
+                      /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                        semanticsLabel: 'map',),*/
+                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:250),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -78,8 +80,9 @@ class _MiniGamePageState extends State<MiniGamePage>{
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/tetris-svgrepo-com.svg",
-                        semanticsLabel: 'map',height:320,width:320),
+                      /*SvgPicture.asset("images/icon/tetris-svgrepo-com.svg",
+                        semanticsLabel: 'map',height:320,width:320),*/
+                      Icon(Umenaviicon1.tetris_svgrepo_com,size:320),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(

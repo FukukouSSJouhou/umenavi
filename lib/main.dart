@@ -1,3 +1,4 @@
+import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
-String applicationVersion= "20210601beta3";
+String applicationVersion= "20210602beta1.01";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
@@ -87,7 +88,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: CustomAppBar(
         appBar:  AppBar(
 
-          title: Text(widget.title),
+          //title: Text(widget.title),
+          title: Row(
+            children: <Widget>[
+              Icon(Umenaviicon1.icon_111651_256),
+              Container(
+                  padding: EdgeInsets.only(
+                    left: 16,
+                  ),
+                  child:Text(widget.title)
+              )
+            ],
+          ),
         ),
         onTap: (){
           _incrementCounter();
@@ -109,8 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                 child:Column(
                   children: <Widget>[
-                    SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
-                    semanticsLabel: 'map',),
+                    /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),*/
+                    Icon(Umenaviicon1.iconmonstr_map_2_240,size:250,),
                     Container(
                       margin: EdgeInsets.all(10.0),
                       child:ListTile(
@@ -130,7 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),
+                      /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
+                      Icon(Umenaviicon1.icon_158931_256,size:250),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -149,7 +163,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),
+                      /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
+                      Icon(Umenaviicon1.icon_111651_256,size:250),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -168,7 +183,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/games.svg",semanticsLabel:"GAME"),
+                      /*SvgPicture.asset("images/icon/games.svg",semanticsLabel:"GAME"),*/
+                      Icon(Umenaviicon1.games,size:250),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -194,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Card(
                   child:Column(
                     children: <Widget>[
-                      SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "About",),
+                      //Icon(Umenaviicon1.icon_111651_256,size:250),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
