@@ -22,11 +22,12 @@ class MiniGamePage extends StatefulWidget{
 class _MiniGamePageState extends State<MiniGamePage>{
   @override
   Widget build(BuildContext context){
-    return Scaffold(
+    /*return Scaffold(
       appBar: new AppBar(
         title: Text("MiniGame"),
       ),
-      body: ListView(
+      body: */
+    return ListView(
         children: <Widget>[
           InkWell(
               onTap: (){
@@ -75,7 +76,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
           ),InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                Navigator.pushReplacement(context,MaterialPageRoute(builder: (conkun) => MyApp()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => MyApp()));
               },
               child:Card(
                   child:Column(
@@ -95,7 +96,7 @@ class _MiniGamePageState extends State<MiniGamePage>{
               )
           ),
         ],
-      ),
-    );
+      );/*,
+    );*/
   }
 }

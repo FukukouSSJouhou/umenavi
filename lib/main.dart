@@ -11,7 +11,7 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
-String applicationVersion= "20210602beta1.01";
+String applicationVersion= "20210603beta1";
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
@@ -63,7 +63,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  int _selectedIndex = 0;
+  static List<Widget> _pageList=[
+    HomeKunPageState(),
+    MiniGamePage(),
+    OtherPageState()
+  ];
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -111,71 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
       ),
-      body: ListView(
+      /*body: ListView(
         children: [
           InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
-              },
-              child:Card(
-                child:Column(
-                  children: <Widget>[
-                    /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
-                    semanticsLabel: 'map',),*/
-                    Icon(Umenaviicon1.iconmonstr_map_2_240,size:250,),
-                    Container(
-                      margin: EdgeInsets.all(10.0),
-                      child:ListTile(
-                        title:Text("校内マップ"),
-                        subtitle: Text("校内マップが表示できます"),
-                      )
-                    )
-                  ],
-                )
-              )
-            ),
-          InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
-                      Icon(Umenaviicon1.icon_158931_256,size:250),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("ステージ発表"),
-                            subtitle: Text("発表の予定が表示できます"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          ),          InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
-                      Icon(Umenaviicon1.icon_111651_256,size:250),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("ウメ横"),
-                            subtitle: Text("飯の値段が書いてあります。"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          ),InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGamePage()));
@@ -232,8 +175,151 @@ class _MyHomePageState extends State<MyHomePage> {
               )
           )
         ],
+      ),*/
+      body: _pageList[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items:const<BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon:Icon(Icons.home),
+            title:Text("Home")
+          ),
+          BottomNavigationBarItem(
+            icon:Icon(Umenaviicon1.games),
+            title:Text("Games")
+          ),
+          BottomNavigationBarItem(
+            icon:Icon(Icons.devices_other),
+            title:Text("Other")
+          )
+        ],
+
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
 
+    );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+}
+class HomeKunPageState extends StatelessWidget{
+  @override
+    Widget build(BuildContext context){
+      return ListView(
+        children: [
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),*/
+                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:250,),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("校内マップ"),
+                            subtitle: Text("校内マップが表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
+                      Icon(Umenaviicon1.icon_158931_256,size:250),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ステージ発表"),
+                            subtitle: Text("発表の予定が表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
+                      Icon(Umenaviicon1.icon_111651_256,size:250),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ウメ横"),
+                            subtitle: Text("飯の値段が書いてあります。"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),
+        ],
+      );
+    }
+}
+class OtherPageState extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return ListView(
+      children: <Widget>[
+        InkWell(
+            onTap: (){
+              HapticFeedback.heavyImpact();
+              /*showAboutDialog(
+                  context:context,
+                  applicationName: applicationName,
+                  applicationVersion: applicationVersion,
+                  //applicationIcon: FlutterLogo(),
+                  applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
+                  applicationLegalese: applicationLegalese,
+
+                );*/
+              showLicensePage(
+                context:context,
+                applicationName: applicationName,
+                applicationVersion: applicationVersion,
+                //applicationIcon: FlutterLogo(),
+                applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
+                applicationLegalese: applicationLegalese,
+              );
+            },
+            child:Card(
+                child:Column(
+                  children: <Widget>[
+                    //Icon(Umenaviicon1.icon_111651_256,size:250),
+                    Container(
+                        margin: EdgeInsets.all(10.0),
+                        child:ListTile(
+                          title:Text("About"),
+                          subtitle: Text("このアプリについて"),
+                        )
+                    )
+                  ],
+                )
+            )
+        )
+      ],
     );
   }
 }
