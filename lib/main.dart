@@ -116,66 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
       ),
-      /*body: ListView(
-        children: [
-          InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => MiniGamePage()));
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      /*SvgPicture.asset("images/icon/games.svg",semanticsLabel:"GAME"),*/
-                      Icon(Umenaviicon1.games,size:250),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("MiniGame"),
-                            subtitle: Text("ミニゲーム(クソゲー)"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          ),InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
-                /*showAboutDialog(
-                  context:context,
-                  applicationName: applicationName,
-                  applicationVersion: applicationVersion,
-                  //applicationIcon: FlutterLogo(),
-                  applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
-                  applicationLegalese: applicationLegalese,
-
-                );*/
-                showLicensePage(
-                  context:context,
-                  applicationName: applicationName,
-                  applicationVersion: applicationVersion,
-                  //applicationIcon: FlutterLogo(),
-                  applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
-                  applicationLegalese: applicationLegalese,
-                );
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      //Icon(Umenaviicon1.icon_111651_256,size:250),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("About"),
-                            subtitle: Text("このアプリについて"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          )
-        ],
-      ),*/
+      
       body: _pageList[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items:const<BottomNavigationBarItem>[
