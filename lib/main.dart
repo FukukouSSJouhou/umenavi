@@ -165,6 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         currentIndex: _selectedIndex,
         onTap:(index) {
+          HapticFeedback.heavyImpact();
           _selectedIndex=index;
           _pageController.jumpToPage(index);
         },
