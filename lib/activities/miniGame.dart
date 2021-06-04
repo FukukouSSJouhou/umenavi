@@ -22,11 +22,6 @@ class MiniGamePage extends StatefulWidget{
 class _MiniGamePageState extends State<MiniGamePage>{
   @override
   Widget build(BuildContext context){
-    /*return Scaffold(
-      appBar: new AppBar(
-        title: Text("MiniGame"),
-      ),
-      body: */
     return ListView(
         children: <Widget>[
           InkWell(
