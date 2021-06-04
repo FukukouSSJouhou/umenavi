@@ -80,11 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   PageController _pageController;
+  Duration pageTurnDuration = Duration(milliseconds: 500);
   @override
   void initState() {
     super.initState();
     _pageController = PageController(
       initialPage: _selectedIndex,
+
+
     );
   }
   @override
@@ -140,6 +143,9 @@ class _MyHomePageState extends State<MyHomePage> {
         controller: _pageController,
         onPageChanged: _onItemTapped,
         children: _pageList,
+        physics:  NeverScrollableScrollPhysics(
+
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items:const<BottomNavigationBarItem>[
@@ -160,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _selectedIndex,
         onTap:(index) {
           _selectedIndex=index;
-          _pageController.animateToPage(index, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+          _pageController.jumpToPage(index);
         },
       ),
 
