@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'UMENAVI',
       darkTheme: ThemeData.dark(),
       theme:ThemeData(
-        primaryColor: Color.fromRGBO(139,0,0,1),
+        primaryColor: Color.fromRGBO(41, 30, 161,1),
       ),
 
       locale: locale,
@@ -79,7 +79,19 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
+  PageController _pageController;
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(
+      initialPage: _selectedIndex,
+    );
+  }
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -123,7 +135,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
       ),
       
-      body: _pageList[_selectedIndex],
+      /*body:_pageList[_selectedIndex],*/
+      body:PageView(
+        controller: _pageController,
+        onPageChanged: _onItemTapped,
+        children: _pageList,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items:const<BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -141,7 +158,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
 
         currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+        onTap:(index) {
+          _selectedIndex=index;
+          _pageController.animateToPage(index, duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+        },
       ),
 
     );
