@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //title: Text(widget.title),
           title: Row(
             children: <Widget>[
-              Icon(Umenaviicon1.icon_111651_256),
+              SvgPicture.asset("images/icon/iconumenavi.svg",height: 50,width: 50,),
               Container(
                   padding: EdgeInsets.only(
                     left: 16,
@@ -110,6 +110,12 @@ class _MyHomePageState extends State<MyHomePage> {
           _incrementCounter();
           if(_counter > 24){
             HapticFeedback.heavyImpact();
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text("Secret Tab!!"),
+
+              )
+            );
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => SecretPage()));
           }
         },
