@@ -11,7 +11,7 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
-String applicationVersion= "20210603beta1";
+const String applicationVersion= "Alpha 0.0.0.1" + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 void main() {
   runApp(MyApp());
