@@ -11,8 +11,7 @@ class _AboutSourceCodePageState extends State<AboutSourceCodePage>{
     final url="https://github.com/FukukouSSJouhou/umenavi";
     if(await canLaunch(url)){
       await launch(url,
-        forceSafariVC: false,
-        forceWebView: false,);
+        forceWebView: true,);
     }
   }
   @override
