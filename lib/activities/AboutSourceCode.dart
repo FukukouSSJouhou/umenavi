@@ -10,7 +10,9 @@ class _AboutSourceCodePageState extends State<AboutSourceCodePage>{
   Future onLaunchGithubUrl() async{
     final url="https://github.com/FukukouSSJouhou/umenavi";
     if(await canLaunch(url)){
-      await launch(url);
+      await launch(url,
+        forceSafariVC: false,
+        forceWebView: false,);
     }
   }
   @override
