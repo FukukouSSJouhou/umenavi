@@ -44,6 +44,7 @@ dependencies:
     git:
       url: "https://github.com/kokkiemouse/flutter-tetris.git"
       ref: "202105311749"
+  url_launcher: ^5.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

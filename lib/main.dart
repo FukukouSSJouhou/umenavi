@@ -1,3 +1,4 @@
+import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -279,7 +280,27 @@ class OtherPageState extends StatelessWidget{
                           title:Text("About"),
                           subtitle: Text("このアプリについて"),
                         )
-                    )
+                    ),
+                  ],
+                )
+            )
+        ),
+        InkWell(
+            onTap: (){
+              HapticFeedback.heavyImpact();
+              Navigator.push(context,MaterialPageRoute(builder: (conkun) => AboutSourceCodePage()));
+            },
+            child:Card(
+                child:Column(
+                  children: <Widget>[
+                    //Icon(Umenaviicon1.icon_111651_256,size:250),
+                    Container(
+                        margin: EdgeInsets.all(10.0),
+                        child:ListTile(
+                          title:Text("About SourceCode"),
+                          subtitle: Text("ソースコードについて"),
+                        )
+                    ),
                   ],
                 )
             )
