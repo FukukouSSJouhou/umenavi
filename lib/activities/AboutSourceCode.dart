@@ -7,13 +7,6 @@ class AboutSourceCodePage extends StatefulWidget{
 }
 class _AboutSourceCodePageState extends State<AboutSourceCodePage>{
 
-  Future onLaunchGithubUrl() async{
-    final url="https://github.com/FukukouSSJouhou/umenavi";
-    if(await canLaunch(url)){
-      await launch(url,
-        forceWebView: true,);
-    }
-  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -23,9 +16,9 @@ class _AboutSourceCodePageState extends State<AboutSourceCodePage>{
       body: ListView(
         children:[
           InkWell(
-              onTap: (){
+              onTap: ()async{
                 HapticFeedback.heavyImpact();
-                onLaunchGithubUrl();
+                await launch("https://github.com/FukukouSSJouhou/umenavi");
               },
               child:Card(
                   child:Column(
