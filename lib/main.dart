@@ -193,6 +193,31 @@ class HomeKunPageState extends StatelessWidget{
     Widget build(BuildContext context){
       return ListView(
         children: [
+
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                //Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),*/
+                      Container(
+                          width: double.infinity,
+                        child:Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:[Text("文化祭開始まであと",style:TextStyle(
+                        fontSize: 30,
+
+                      ),textAlign:TextAlign.left)]
+                      ))
+                    ,
+                    Text("30:00",style:TextStyle(fontSize: 60))],
+                  )
+              )
+          ),
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
