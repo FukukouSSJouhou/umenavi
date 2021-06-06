@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
 import "activities/schoolmap.dart";
+import 'activities/settings/Settings.dart';
 import "activities/stage_show.dart";
 import "activities/umeyoko.dart";
 import 'activities/miniGame.dart';
@@ -264,6 +265,26 @@ class OtherPageState extends StatelessWidget{
   Widget build(BuildContext context){
     return ListView(
       children: <Widget>[
+        InkWell(
+            onTap: (){
+              HapticFeedback.heavyImpact();
+              Navigator.push(context,MaterialPageRoute(builder: (b) => SettingsPage()));
+            },
+            child:Card(
+                child:Column(
+                  children: <Widget>[
+                    Icon(Icons.settings,size:250),
+                    Container(
+                        margin: EdgeInsets.all(10.0),
+                        child:ListTile(
+                          title:Text("Settings"),
+                          subtitle: Text("設定"),
+                        )
+                    ),
+                  ],
+                )
+            )
+        ),
         InkWell(
             onTap: (){
               HapticFeedback.heavyImpact();
