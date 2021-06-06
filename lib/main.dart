@@ -214,7 +214,7 @@ class HomeKunPageState extends StatelessWidget{
                       ),textAlign:TextAlign.left)]
                       ))
                     ,
-                    Text("30:00",style:TextStyle(fontSize: 60))],
+                    Text("??",style:TextStyle(fontSize: 60))],
                   )
               )
           ),
