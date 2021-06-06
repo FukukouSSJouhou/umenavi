@@ -4,13 +4,21 @@ class NewsMainPage extends StatefulWidget{
   _NewsMainPageState createState() => new _NewsMainPageState();
 }
 class _NewsMainPageState extends State<NewsMainPage>{
+  DateTime updtime=new DateTime.now();
+  Future<void> _onRefresh() async {
+    setState(() {
+      updtime=DateTime.now();
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Text("News!!")
+    return  RefreshIndicator(child:ListView(
+
+      physics: const AlwaysScrollableScrollPhysics(),
+      children: [
+        Text("Time : " +updtime.toString() )
       ],
-    );
+    ), onRefresh: _onRefresh);
   }
 
 }
