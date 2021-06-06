@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
             title:Text("Other")
           )
         ],
-
+        type:BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap:(index) {
           HapticFeedback.heavyImpact();
