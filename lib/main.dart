@@ -1,4 +1,5 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
+import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -67,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   static List<Widget> _pageList=[
     HomeKunPageState(),
+    NewsMainPage(),
     MiniGamePage(),
     OtherPageState()
   ];
@@ -153,6 +155,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon:Icon(Icons.home),
             title:Text("Home")
+          ),
+          BottomNavigationBarItem(
+              icon:Icon(Icons.feed_outlined),
+              title:Text("News")
           ),
           BottomNavigationBarItem(
             icon:Icon(Umenaviicon1.games),
@@ -273,7 +279,7 @@ class OtherPageState extends StatelessWidget{
             child:Card(
                 child:Column(
                   children: <Widget>[
-                    //Icon(Umenaviicon1.icon_111651_256,size:250),
+                    SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320),
                     Container(
                         margin: EdgeInsets.all(10.0),
                         child:ListTile(

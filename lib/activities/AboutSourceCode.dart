@@ -18,7 +18,22 @@ class _AboutSourceCodePageState extends State<AboutSourceCodePage>{
           InkWell(
               onTap: ()async{
                 HapticFeedback.heavyImpact();
-                await launch("https://github.com/FukukouSSJouhou/umenavi");
+                //await launch("https://github.com/FukukouSSJouhou/umenavi");
+                showDialog(
+                  context: context,
+                  builder: (_b){
+                    return AlertDialog(
+                      title:Text("ソースコードについて"),
+                      content: Text("閲覧が可能です。閲覧したければ知ってそうな情報班員に聞くか、ググりましょう。"),
+                      actions:<Widget>[
+                        MaterialButton(child:Text("キャンセル"),
+                            onPressed: ()=>Navigator.pop(context)),
+                        MaterialButton(child: Text("OK"),
+                            onPressed: () => Navigator.pop(context),)
+                      ]
+                    );
+                  }
+                );
               },
               child:Card(
                   child:Column(
