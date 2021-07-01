@@ -222,11 +222,11 @@ class HomeKunPageState extends StatelessWidget{
                       child:Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("アンケートにご協力ください",style: TextStyle(fontSize: 25),)
+                          Text("開発者からのお知らせ",style: TextStyle(fontSize: 25),)
                         ],
                       )
                     )                    ,
-                    Text("??",style:TextStyle(fontSize: 60))],
+                    Text("アンケートにご協力ください",style:TextStyle(fontSize: 60))],
                   )
               )
           ),
