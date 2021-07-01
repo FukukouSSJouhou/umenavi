@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
+import 'package:url_launcher/url_launcher.dart';
 import "activities/schoolmap.dart";
 import 'activities/settings/Settings.dart';
 import "activities/stage_show.dart";
@@ -195,16 +196,17 @@ class HomeKunPageState extends StatelessWidget{
         children: [
 
           InkWell(
-              onTap: (){
+              onTap: () async {
                 HapticFeedback.heavyImpact();
                 //Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+                await launch("https://docs.google.com/forms/d/e/1FAIpQLSevkohazWRP17pnUbshVeOMaU_BWhjGVCGZ6ohZOrFn8uQQ7w/viewform?usp=sf_link");
               },
               child:Card(
                   child:Column(
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
                     semanticsLabel: 'map',),*/
-                      Container(
+                      /*Container(
                           width: double.infinity,
                         child:Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,7 +215,17 @@ class HomeKunPageState extends StatelessWidget{
 
                       ),textAlign:TextAlign.left)]
                       ))
-                    ,
+
+                       */
+                    Container(
+                      width: double.infinity,
+                      child:Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("アンケートにご協力ください",style: TextStyle(fontSize: 25),)
+                        ],
+                      )
+                    )                    ,
                     Text("??",style:TextStyle(fontSize: 60))],
                   )
               )
