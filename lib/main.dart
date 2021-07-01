@@ -199,7 +199,7 @@ class HomeKunPageState extends StatelessWidget{
               onTap: () async {
                 HapticFeedback.heavyImpact();
                 //Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
-                await launch("https://docs.google.com/forms/d/e/1FAIpQLSevkohazWRP17pnUbshVeOMaU_BWhjGVCGZ6ohZOrFn8uQQ7w/viewform?usp=sf_link");
+                await launch("https://docs.google.com/forms/d/e/1FAIpQLSevkohazWRP17pnUbshVeOMaU_BWhjGVCGZ6ohZOrFn8uQQ7w/viewform?usp=sf_link ");
               },
               child:Card(
                   child:Column(
