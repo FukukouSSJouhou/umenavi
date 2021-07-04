@@ -25,7 +25,7 @@ class _SettingsPageState extends State<SettingsPage>{
           ListTile(
             title: Text("Theme Settings"),
             subtitle: Text("theme select"),
-            onTap:{
+            onTap:(){
               Navigator.push(context,MaterialPageRoute(builder: (bd) => ThemeSettingsPage()));
             },
           )
