@@ -13,7 +13,18 @@ class _SecretPageStates extends State<SecretPage>{
         ),
       body:ListView(
         children: <Widget>[
-          Text("Secret....")
+          InkWell(
+            child: Text("隠しページですを"),
+            onTap: (){
+            //nothing to do;
+            },
+          ),
+          InkWell(
+            child:Text("情報班に会いに行きましょう!!!!!"),
+            onTap: (){
+              // nothing to do
+            },
+          )
         ],
       )
     );
