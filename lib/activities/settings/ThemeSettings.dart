@@ -10,6 +10,7 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage>{
       appBar: AppBar(
         title: Text("Theme Settings"),
       ),
+      body:ThemeListView()
     );
   }
 }

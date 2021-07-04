@@ -1,3 +1,4 @@
+import 'package:UMENAVI/activities/settings/ThemeSettings.dart';
 import 'package:flutter/material.dart';
 class SettingsPage extends StatefulWidget{
   _SettingsPageState createState() => new _SettingsPageState();
@@ -20,10 +21,13 @@ class _SettingsPageState extends State<SettingsPage>{
               Icons.settings,
               size: 50.0,
             ),),
+          
           ListTile(
             title: Text("Theme Settings"),
             subtitle: Text("theme select"),
-
+            onTap:{
+              Navigator.push(context,MaterialPageRoute(builder: (bd) => ThemeSettingsPage()));
+            },
           )
 
         ],
