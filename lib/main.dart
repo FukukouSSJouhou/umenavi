@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import "activities/schoolmap.dart";
 import 'activities/settings/Settings.dart';
@@ -19,9 +20,18 @@ import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
 const String applicationVersion= "Alpha 0.0.0.1" + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
-
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs =await SharedPreferences.getInstance();
+  final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
+  return runApp(
+    ChangeNotifierProvider(create:(_)=>ThemeModeNotifier(id: themeModeID),
+    child:const  MyApp(),)
+  );
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
