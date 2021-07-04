@@ -14,14 +14,14 @@ class _SettingsPageState extends State<SettingsPage>{
       ),
       body:ListView(
         children: <Widget>[
-          SwitchListTile(value: activetintin, onChanged: changeSW1,
+          /*SwitchListTile(value: activetintin, onChanged: changeSW1,
           title:Text("Text 1"),
           subtitle: Text("Sub Title"),
             secondary: new Icon(
               Icons.settings,
               size: 50.0,
             ),),
-          
+          */
           ListTile(
             title: Text("Theme Settings"),
             subtitle: Text("theme select"),
