@@ -23,7 +23,7 @@ class _SettingsPageState extends State<SettingsPage>{
             ),),
           SafeArea(
             child: ThemeListView(),
-          );
+          ),
         ],
       )
     );
