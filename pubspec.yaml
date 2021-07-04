@@ -34,7 +34,7 @@ dependencies:
   flutter_svg: ^0.22.0
 
   slidingpuzzle:
-      git:
+    git:
       url: "https://github.com/kokkiemouse/sliding_puzzle.git"
       ref: "202105231937"
 
