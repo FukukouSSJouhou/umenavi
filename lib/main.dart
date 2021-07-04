@@ -1,11 +1,13 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
+import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import "activities/schoolmap.dart";
 import 'activities/settings/Settings.dart';
@@ -17,21 +19,18 @@ import "activities/SecretPage.dart";
 String applicationName= "UMENAVI";
 const String applicationVersion= "Alpha 0.0.0.1" + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
-void main() {
-  runApp(MyApp());
-}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final themeModeNotifier=Provider.of<ThemeModeNotifier>(context);
     const locale = Locale("ja", "JP");
     return MaterialApp(
       title: 'UMENAVI',
-      darkTheme: ThemeData.dark(),
-      theme:ThemeData(
-        primaryColor: Color.fromRGBO(41, 30, 161,1),
-      ),
+      darkTheme: themeModeNotifier.darkThemeData,
+      theme:themeModeNotifier.themeData,
 
       locale: locale,
       localizationsDelegates:  [
