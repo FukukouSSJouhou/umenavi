@@ -1,3 +1,4 @@
+import 'package:UMENAVI/themes/ThemeListView.dart';
 import 'package:flutter/material.dart';
 class SettingsPage extends StatefulWidget{
   _SettingsPageState createState() => new _SettingsPageState();
@@ -19,7 +20,10 @@ class _SettingsPageState extends State<SettingsPage>{
             secondary: new Icon(
               Icons.settings,
               size: 50.0,
-            ),)
+            ),),
+          SafeArea(
+            child: ThemeListView(),
+          );
         ],
       )
     );
