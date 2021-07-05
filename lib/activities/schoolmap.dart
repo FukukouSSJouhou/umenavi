@@ -3,7 +3,6 @@ import 'package:UMENAVI/activities/schoolmap2.dart';
 import 'package:UMENAVI/activities/schoolmap3.dart';
 import 'package:UMENAVI/activities/schoolmap4.dart';
 import 'package:flutter/services.dart';
-import 'package:photo_view/photo_view.dart';
 class SchoolMapPage extends StatefulWidget{
   @override
   _SchoolMapPageState createState()=>new _SchoolMapPageState();
@@ -17,10 +16,9 @@ class _SchoolMapPageState extends State<SchoolMapPage>{
       ),
       body: ListView(
         children: [
-          InkWell(
-            child:PhotoView(
-              imageProvider: AssetImage("images/maps/1F.png"),
-            )
+          GestureDetector(
+          behavior: HitTestBehavior.opaque,
+            child:Image.asset("images/maps/1F.png")
           )
         ],
       ),
