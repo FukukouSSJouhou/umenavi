@@ -8,6 +8,7 @@ final ThemeData EnjiTheme=ThemeData(
   primaryColor: Color.fromRGBO(139, 0, 0,1),
   appBarTheme: AppBarTheme(
     backwardsCompatibility: false,
-    systemOverlayStyle: SystemUiOverlayStyle.light
+    systemOverlayStyle: SystemUiOverlayStyle.light,
+    backgroundColor: Color.fromRGBO(139, 0, 0,1)
   )
 );
