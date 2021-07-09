@@ -12,3 +12,6 @@ final ThemeData EnjiTheme=ThemeData(
     backgroundColor: Color.fromRGBO(139, 0, 0,1)
   )
 );
+final ThemeData CustomColorTheme=ThemeData(
+
+);

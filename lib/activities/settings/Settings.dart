@@ -28,6 +28,13 @@ class _SettingsPageState extends State<SettingsPage>{
             onTap:(){
               Navigator.push(context,MaterialPageRoute(builder: (bd) => ThemeSettingsPage()));
             },
+          ),
+          ListTile(
+            title: Text("Color Settings"),
+            subtitle: Text("Color Settings"),
+            onTap:(){
+              Navigator.push(context,MaterialPageRoute(builder: (bd) => ThemeSettingsPage()));
+            },
           )
 
         ],
