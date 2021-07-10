@@ -27,29 +27,6 @@ class _MiniGamePageState extends State<MiniGamePage>{
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => Pazzle1()));
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.extension_outlined,
-                        size:250,
-                      ),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("パズルゲーム君"),
-                            subtitle: Text("全部をOnにしよう"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          ),
-          InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => Board()));
               },
               child:Card(
