@@ -1,3 +1,4 @@
+import 'package:UMENAVI/activities/settings/ColorSettings.dart';
 import 'package:UMENAVI/activities/settings/ThemeSettings.dart';
 import 'package:flutter/material.dart';
 class SettingsPage extends StatefulWidget{
@@ -33,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage>{
             title: Text("Color Settings"),
             subtitle: Text("Color Settings"),
             onTap:(){
-              Navigator.push(context,MaterialPageRoute(builder: (bd) => ThemeSettingsPage()));
+              Navigator.push(context,MaterialPageRoute(builder: (bd) => ColorSettings()));
             },
           )
 

@@ -1,5 +1,7 @@
+import 'package:UMENAVI/themes/ThemeColorNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 final ThemeData ippanDarkTheme=ThemeData.dark();
 final ThemeData ippanLightTheme=ThemeData(
@@ -13,6 +15,12 @@ final ThemeData EnjiTheme=ThemeData(
     backgroundColor: Color.fromRGBO(139, 0, 0,1)
   )
 );
-final prefs = SharedPreferences.getInstance();
-final ThemeData CustomColorTheme=ThemeData(
+final prefs =SharedPreferences.getInstance();
+final ThemeData CustomTheme=ThemeData(
+  primaryColor: Color.fromRGBO(
+      prefs.getInt("ThemeRGB_r") ?? 41,
+      prefs.getInt("ThemeRGB_g") ?? 30,
+      prefs.getInt("ThemeRGB_b") ?? 161,
+      prefs.getDouble("ThemeRGB_o") ?? 1
+  )
 );

@@ -26,10 +26,10 @@ Future main() async{
   final prefs =await SharedPreferences.getInstance();
   final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
   final themeColor=Color.fromRGBO(
-    prefs.getInt("ThemeRGB_r"),
-    prefs.getInt("ThemeRGB_g"),
-    prefs.getInt("ThemeRGB_b"),
-    prefs.getDouble("ThemeRGB_o")
+    prefs.getInt("ThemeRGB_r") ?? 41,
+    prefs.getInt("ThemeRGB_g") ?? 30,
+    prefs.getInt("ThemeRGB_b") ?? 161,
+    prefs.getDouble("ThemeRGB_o") ?? 1
   );
   return runApp(
       MultiProvider(
