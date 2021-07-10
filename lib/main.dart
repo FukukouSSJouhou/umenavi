@@ -24,6 +24,7 @@ Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   final prefs =await SharedPreferences.getInstance();
   final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
+  
   return runApp(
     ChangeNotifierProvider(create:(_)=>ThemeModeNotifier(id: themeModeID),
     child:const  MyApp(),)
