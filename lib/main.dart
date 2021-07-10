@@ -1,6 +1,7 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
+import 'package:UMENAVI/themes/ThemeColorNotifier.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -24,10 +25,23 @@ Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
   final prefs =await SharedPreferences.getInstance();
   final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
-  
+  final themeColor=Color.fromRGBO(
+    prefs.getInt("ThemeRGB_r"),
+    prefs.getInt("ThemeRGB_g"),
+    prefs.getInt("ThemeRGB_b"),
+    prefs.getDouble("ThemeRGB_o")
+  );
   return runApp(
-    ChangeNotifierProvider(create:(_)=>ThemeModeNotifier(id: themeModeID),
-    child:const  MyApp(),)
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider<ThemeModeNotifier>(
+            create:(_)=>ThemeModeNotifier(id: themeModeID)
+          ),
+          ChangeNotifierProvider<ThemeColorNotifier>(
+            create: (_)=>ThemeColorNotifier(color: themeColor),
+          )
+        ],
+        child:const  MyApp(),)
   );
 }
 
