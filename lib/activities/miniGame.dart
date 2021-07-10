@@ -50,27 +50,6 @@ class _MiniGamePageState extends State<MiniGamePage>{
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => Board()));
-              },
-              child:Card(
-                  child:Column(
-                    children: <Widget>[
-                      /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
-                        semanticsLabel: 'map',),*/
-                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:250),
-                      Container(
-                          margin: EdgeInsets.all(10.0),
-                          child:ListTile(
-                            title:Text("Slide Pazzle"),
-                            subtitle: Text("スライドパズル\nすごく見づらい"),
-                          )
-                      )
-                    ],
-                  )
-              )
-          ),InkWell(
-              onTap: (){
-                HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => MyApp()));
               },
               child:Card(
