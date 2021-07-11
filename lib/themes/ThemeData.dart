@@ -22,5 +22,10 @@ final ThemeData MintTheme=ThemeData(
   primaryColor:Color.fromRGBO(0, 255, 170,1)
 );
 final ThemeData PinkTheme=ThemeData(
-  primaryColor:Color.fromRGBO(251, 0, 255, 1)
+  primaryColor:Color.fromRGBO(251, 0, 255, 1),
+  appBarTheme: AppBarTheme(
+    backwardsCompatibility: false,
+    systemOverlayStyle: SystemUiOverlayStyle.light,
+    backgroundColor: Color.fromRGBO(251, 0, 255,1)
+  )
 );
