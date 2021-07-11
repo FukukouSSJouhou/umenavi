@@ -21,3 +21,6 @@ final ThemeData EnjiTheme=ThemeData(
 final ThemeData MintTheme=ThemeData(
   primaryColor:Color.fromRGBO(0, 255, 170,1)
 );
+final ThemeData PinkTheme=ThemeData(
+  primaryColor:Color.fromRGBO(251, 0, 255, 1)
+);

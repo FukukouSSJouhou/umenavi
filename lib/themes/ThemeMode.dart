@@ -6,6 +6,7 @@ enum ExtraThemeMode{
   dark,
   enji,
   mint,
+  pink,
 }
 extension Extension on ExtraThemeMode{
   int get id{
@@ -20,6 +21,8 @@ extension Extension on ExtraThemeMode{
         return 1003;
       case ExtraThemeMode.mint:
         return 1004;
+      case ExtraThemeMode.pink:
+        return 1005;
     }
     return 0;
   }
@@ -35,6 +38,8 @@ extension Extension on ExtraThemeMode{
         return "Enji";
       case ExtraThemeMode.mint:
         return "Mint";
+      case ExtraThemeMode.pink:
+        return "Pink";
     }
     return null;
   }
@@ -51,6 +56,8 @@ extension Extension on ExtraThemeMode{
         return "Enji Iro";
       case ExtraThemeMode.mint:
         return "Mint Color";
+      case ExtraThemeMode.pink:
+        return "Pink";
     }
     return null;
   }
@@ -67,6 +74,8 @@ extension Extension on ExtraThemeMode{
         return Icons.school;
       case ExtraThemeMode.mint:
         return Icons.access_time;
+      case ExtraThemeMode.pink:
+        return Icons.pin;
     }
     return null;
   }
@@ -82,6 +91,8 @@ extension Extension on ExtraThemeMode{
         return EnjiTheme;
       case ExtraThemeMode.mint:
         return MintTheme;
+      case ExtraThemeMode.pink:
+        return PinkTheme;
     }
     return null;
   }
