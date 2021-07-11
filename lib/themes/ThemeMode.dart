@@ -4,7 +4,8 @@ enum ExtraThemeMode{
   system,
   light,
   dark,
-  enji
+  enji,
+  mint,
 }
 extension Extension on ExtraThemeMode{
   int get id{
@@ -17,6 +18,8 @@ extension Extension on ExtraThemeMode{
         return 1002;
       case ExtraThemeMode.enji:
         return 1003;
+      case ExtraThemeMode.mint:
+        return 1004;
     }
     return 0;
   }
@@ -30,6 +33,8 @@ extension Extension on ExtraThemeMode{
         return "Dark";
       case ExtraThemeMode.enji:
         return "Enji";
+      case ExtraThemeMode.mint:
+        return "Mint";
     }
     return null;
   }
@@ -44,6 +49,8 @@ extension Extension on ExtraThemeMode{
         return "Default Dark Theme";
       case ExtraThemeMode.enji:
         return "Enji Iro";
+      case ExtraThemeMode.mint:
+        return "Mint Color";
     }
     return null;
   }
@@ -58,6 +65,8 @@ extension Extension on ExtraThemeMode{
         return Icons.dark_mode;
       case ExtraThemeMode.enji:
         return Icons.school;
+      case ExtraThemeMode.mint:
+        return Icons.access_time;
     }
     return null;
   }
@@ -71,6 +80,8 @@ extension Extension on ExtraThemeMode{
         return ippanDarkTheme;
       case ExtraThemeMode.enji:
         return EnjiTheme;
+      case ExtraThemeMode.mint:
+        return MintTheme;
     }
     return null;
   }
