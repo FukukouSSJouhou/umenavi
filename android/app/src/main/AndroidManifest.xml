@@ -3,7 +3,7 @@
    <application
         android:label="umenavi"
         android:icon="@drawable/ic_launcher"
-        android:roundicon="@drawable/ic_launcher">
+        android:roundIcon="@drawable/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
