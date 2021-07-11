@@ -2,7 +2,7 @@
     package="com.fukukou.umezitu.umenavi">
    <application
         android:label="umenavi"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
