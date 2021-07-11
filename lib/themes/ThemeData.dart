@@ -15,7 +15,8 @@ final ThemeData EnjiTheme=ThemeData(
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle.light,
     backgroundColor: Color.fromRGBO(139, 0, 0,1)
-  )
+  ),
+  accentColor: Color.fromRGBO(139, 0, 0,1),
 );
 final ThemeData MintTheme=ThemeData(
   primaryColor:Color.fromRGBO(0, 255, 170,1)
