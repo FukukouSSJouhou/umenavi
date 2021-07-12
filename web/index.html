@@ -34,20 +34,17 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    if ('serviceWorker' in navigator) {
+    /*if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js').then(registration => {
-          //登録成功
-          registration.onupdatefound = function () {
-            console.log('Update found');
-            registration.update();
-          }
-        })
-          .catch(err => {
-            //登録失敗
-          });
+        navigator.serviceWorker.register('sw.js');
       });
-    }
+    }*/
+    
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(function (registration) {
+    }).catch(function (err) {
+    });
+  }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
