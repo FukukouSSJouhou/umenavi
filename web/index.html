@@ -11,7 +11,7 @@
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
-  <base href="/">
+  <base href="/umenavi_web/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -36,7 +36,16 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
+        navigator.serviceWorker.register('flutter_service_worker.js').then(registration => {
+          //登録成功
+          registration.onupdatefound = function () {
+            console.log('Update found');
+            registration.update();
+          }
+        })
+          .catch(err => {
+            //登録失敗
+          });
       });
     }
   </script>
