@@ -14,7 +14,7 @@ class _StageShowPageState extends State<StageShowPage>{
       body:ListView(
         children: [
           InkWell(
-            child:Image.asset("images/others/TimeTable.png")
+            child:Text("NOT FOUND")
           )
         ],
       )
