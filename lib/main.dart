@@ -201,11 +201,8 @@ class _MyHomePageState extends State<MyHomePage> {
 class HomeKunPageState extends StatelessWidget{
   @override
     Widget build(BuildContext context){
-      return GridView.count(
-        crossAxisCount: 2,
-          childAspectRatio:0.7,
+      return ListView(
         children: [
-/*
           InkWell(
               onTap: () async {
                 HapticFeedback.heavyImpact();
@@ -240,7 +237,7 @@ class HomeKunPageState extends StatelessWidget{
                     Text("アンケートにご協力ください",style:TextStyle(fontSize: 60))],
                   )
               )
-          ),*/
+          ),
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
