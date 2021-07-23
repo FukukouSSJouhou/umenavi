@@ -26,8 +26,11 @@ jobs:
       - name: Set Ver
         id: verkun
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Set date
+        id: datekun
+        run: echo "::set-output name=datekk::$(date '+%Y%m%d %H%M%S')"
       - name: Build
-        run: flutter build web --dart-define=APPVER=${{steps.verkun.outputs.sha_short}}
+        run: flutter build web --dart-define=APPVER=${{steps.verkun.outputs.sha_short}}${{steps.datekun.outputs.datekk}}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/webrelease' }}
