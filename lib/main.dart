@@ -282,12 +282,12 @@ class _HomeKunItemBuilder extends StatelessWidget{
                   child:Column(
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
-                      Icon(Umenaviicon1.icon_158931_256,size:125),
+                      Icon(Icons.event_note_outlined,size:125),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
-                            title:Text("ステージ発表"),
-                            subtitle: Text("発表の予定が表示できます"),
+                            title:Text("スケジュール"),
+                            subtitle: Text("当日のスケジュールが確認できます"),
                           )
                       )
                     ],
@@ -296,6 +296,30 @@ class _HomeKunItemBuilder extends StatelessWidget{
           );
         break;
       case 3:
+        return
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
+                      Icon(Umenaviicon1.icon_158931_256,size:125),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ステージ発表"),
+                            subtitle: Text("発表の内容が表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          );
+        break;
+      case 4:
         return
           InkWell(
               onTap: (){
@@ -327,13 +351,14 @@ class HomeKunPageState extends StatelessWidget{
     StaggeredTile.count(4, 1),
     StaggeredTile.count(2,2),
     StaggeredTile.count(2,2),
-    StaggeredTile.count(4,2),
+    StaggeredTile.count(2,2),
+    StaggeredTile.count(2,2),
   ];
   @override
     Widget build(BuildContext context){
       return StaggeredGridView.countBuilder(
           crossAxisCount: 4,
-          itemCount:4,
+          itemCount:5,
           itemBuilder: (BuildContext context,int index){
             return _HomeKunItemBuilder(index: index,context: context,);
           },
