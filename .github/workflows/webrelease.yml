@@ -13,7 +13,10 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
-
+      - name: Generate build number
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{secrets.github_token}} 
       - name: Setup Flutter
         run: |
           git clone https://github.com/flutter/flutter.git --depth 1 -b 2.2.1 _flutter
@@ -23,11 +26,8 @@ jobs:
         run: |
           flutter config --enable-web
           flutter pub get
-      - name: Set date
-        id: datekun
-        run: echo "::set-output name=datekk::$(date '+%Y%m%d%H%M%S')"
       - name: Build
-        run: flutter build web --dart-define=APPVER=${{steps.datekun.outputs.datekk}}
+        run: flutter build web --dart-define=APPVER="Build $BUILD_NUMBER"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/webrelease' }}
