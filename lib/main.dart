@@ -1,4 +1,5 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
+import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
@@ -276,7 +277,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchedulePage()));
               },
               child:Card(
                   child:Column(
