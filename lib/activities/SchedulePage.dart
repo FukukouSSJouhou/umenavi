@@ -66,7 +66,12 @@ class _SchedulePageState extends State<SchedulePage>{
             ]
           )
         ],
-        timetableStyle: TimetableStyle(),
+        timetableStyle: TimetableStyle(
+          startHour: 9,
+          endHour: 15,
+            timeItemHeight:180,
+            visibleDecorationBorder:true,
+        ),
       )
     );
   }
