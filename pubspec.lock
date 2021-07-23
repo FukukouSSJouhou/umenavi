@@ -151,6 +151,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -163,6 +170,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_timetable_view:
+    dependency: "direct main"
+    description:
+      name: flutter_timetable_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -554,7 +568,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.4"
+    version: "2.2.5"
   xdg_directories:
     dependency: transitive
     description:
