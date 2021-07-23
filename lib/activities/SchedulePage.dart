@@ -14,7 +14,7 @@ class _SchedulePageState extends State<SchedulePage>{
       body: TimetableView(
         laneEventsList: [
           LaneEvents(
-            lane: Lane(name:"行事"),
+            lane: Lane(name:"行事(明確にわかるものしか載せていません)"),
             events: [
               /*
               TableEvent(
