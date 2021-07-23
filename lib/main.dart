@@ -5,6 +5,7 @@ import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
@@ -198,9 +199,149 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 }
+class _HomeKunItemBuilder extends StatelessWidget{
+  final int index;
+  final BuildContext context;
+  _HomeKunItemBuilder({Key key,@required this.index,@required this.context})
+    :assert(index != null && context != null),
+    super(key: key);
+  @override
+  Widget build(BuildContext context){
+    switch(index){
+      case 0:
+      return
+        InkWell(
+            onTap: () async {
+              HapticFeedback.heavyImpact();
+              //Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+              await launch("https://docs.google.com/forms/d/e/1FAIpQLSevkohazWRP17pnUbshVeOMaU_BWhjGVCGZ6ohZOrFn8uQQ7w/viewform?usp=sf_link ");
+            },
+            child:Card(
+                child:Column(
+                  children: <Widget>[
+                    /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),*/
+                    /*Container(
+                          width: double.infinity,
+                        child:Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:[Text("文化祭開始まであと",style:TextStyle(
+                        fontSize: 30,
+
+                      ),textAlign:TextAlign.left)]
+                      ))
+
+                       */
+                    Container(
+                        width: double.infinity,
+                        child:Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("開発者からのお知らせ",style: TextStyle(fontSize: 25),)
+                          ],
+                        )
+                    )                    ,
+                    Text("アンケートにご協力ください",style:TextStyle(fontSize: 60))],
+                )
+            )
+        );
+        break;
+      case 1:
+        return
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
+                    semanticsLabel: 'map',),*/
+                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:250,),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("校内マップ"),
+                            subtitle: Text("校内マップが表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          );
+        break;
+      case 2:
+        return
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => StageShowPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
+                      Icon(Umenaviicon1.icon_158931_256,size:250),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ステージ発表"),
+                            subtitle: Text("発表の予定が表示できます"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          );
+        break;
+      case 3:
+        return
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
+                      Icon(Umenaviicon1.icon_111651_256,size:250),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("ウメ横"),
+                            subtitle: Text("飯の値段が書いてあります。"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          );
+        break;
+  }
+  }
+}
 class HomeKunPageState extends StatelessWidget{
+  static const List<StaggeredTile> _Tiles=[
+    StaggeredTile.count(2, 1),
+    StaggeredTile.count(1,1),
+    StaggeredTile.count(1,1),
+    StaggeredTile.count(2,1),
+  ];
   @override
     Widget build(BuildContext context){
+      return StaggeredGridView.countBuilder(
+          crossAxisCount: 2,
+          itemCount:4,
+          itemBuilder: (BuildContext context,int index){
+            return _HomeKunItemBuilder(index: index,context: context,);
+          },
+          staggeredTileBuilder: (int index){
+            int _tIndex=index % _Tiles.length;
+            return _Tiles[_tIndex];
+          },
+      );
       return ListView(
         children: [
           InkWell(
