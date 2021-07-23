@@ -258,7 +258,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/iconmonstr-map-2-240.svg",
                     semanticsLabel: 'map',),*/
-                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:250,),
+                      Icon(Umenaviicon1.iconmonstr_map_2_240,size:125,),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -282,7 +282,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
                   child:Column(
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/icon_158931_256.svg",semanticsLabel: "stage",),*/
-                      Icon(Umenaviicon1.icon_158931_256,size:250),
+                      Icon(Umenaviicon1.icon_158931_256,size:125),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -306,7 +306,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
                   child:Column(
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
-                      Icon(Umenaviicon1.icon_111651_256,size:250),
+                      Icon(Umenaviicon1.icon_111651_256,size:125),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
@@ -324,15 +324,15 @@ class _HomeKunItemBuilder extends StatelessWidget{
 }
 class HomeKunPageState extends StatelessWidget{
   static const List<StaggeredTile> _Tiles=[
-    StaggeredTile.count(2, 1),
-    StaggeredTile.count(1,1),
-    StaggeredTile.count(1,1),
-    StaggeredTile.count(2,1),
+    StaggeredTile.count(4, 1),
+    StaggeredTile.count(2,2),
+    StaggeredTile.count(2,2),
+    StaggeredTile.count(4,2),
   ];
   @override
     Widget build(BuildContext context){
       return StaggeredGridView.countBuilder(
-          crossAxisCount: 2,
+          crossAxisCount: 4,
           itemCount:4,
           itemBuilder: (BuildContext context,int index){
             return _HomeKunItemBuilder(index: index,context: context,);
