@@ -25,7 +25,7 @@ jobs:
           flutter pub get
       - name: Set date
         id: datekun
-        run: echo "::set-output name=datekk::$(date '+%Y%m%d %H%M%S')"
+        run: echo "::set-output name=datekk::$(date '+%Y%m%d%H%M%S')"
       - name: Build
         run: flutter build web --dart-define=APPVER=${{steps.datekun.outputs.datekk}}
       - name: Deploy
