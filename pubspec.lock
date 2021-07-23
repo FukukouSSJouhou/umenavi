@@ -170,13 +170,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_timetable_view:
-    dependency: "direct main"
-    description:
-      name: flutter_timetable_view
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -499,6 +492,13 @@ packages:
       url: "https://github.com/kokkiemouse/flutter-tetris.git"
     source: git
     version: "1.0.0+1"
+  timelines:
+    dependency: "direct main"
+    description:
+      name: timelines
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   typed_data:
     dependency: transitive
     description:
