@@ -49,11 +49,11 @@ extension Extension on ExtraThemeMode{
       case ExtraThemeMode.system:
         return "System setting";
       case ExtraThemeMode.light:
-        return "Default Light Theme";
+        return "Blue Theme";
       case ExtraThemeMode.dark:
         return "Default Dark Theme";
       case ExtraThemeMode.enji:
-        return "Enji Iro";
+        return "Default Enji Iro";
       case ExtraThemeMode.mint:
         return "Mint Color";
       case ExtraThemeMode.pink:
@@ -82,7 +82,7 @@ extension Extension on ExtraThemeMode{
   ThemeData get themeData{
     switch(this){
       case ExtraThemeMode.system:
-        return ippanLightTheme;
+        return EnjiTheme;
       case ExtraThemeMode.light:
         return ippanLightTheme;
       case ExtraThemeMode.dark:
