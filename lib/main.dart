@@ -349,16 +349,16 @@ class _HomeKunItemBuilder extends StatelessWidget{
 }
 class HomeKunPageState extends StatelessWidget{
   static const List<StaggeredTile> _Tiles=[
-    StaggeredTile.count(4, 1),
-    StaggeredTile.count(2,2),
-    StaggeredTile.count(2,2),
-    StaggeredTile.count(2,2),
-    StaggeredTile.count(2,2),
+    StaggeredTile.count(6, 2),
+    StaggeredTile.count(3,4),
+    StaggeredTile.count(3,4),
+    StaggeredTile.count(3,4),
+    StaggeredTile.count(3,4),
   ];
   @override
     Widget build(BuildContext context){
       return StaggeredGridView.countBuilder(
-          crossAxisCount: 4,
+          crossAxisCount: 6,
           itemCount:5,
           itemBuilder: (BuildContext context,int index){
             return _HomeKunItemBuilder(index: index,context: context,);
