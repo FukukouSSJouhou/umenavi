@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "799251607216",
+    "project_id": "umenavi-f8fbc",
+    "storage_bucket": "umenavi-f8fbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799251607216:android:2c6fecd3f3e168a3c39575",
+        "android_client_info": {
+          "package_name": "com.fukukou.umezitu.umenavi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799251607216-5hinsa5a6inejbmoqbse0pft68vvgd92.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fukukou.umezitu.umenavi",
+            "certificate_hash": "d9ef7f3b934212c20b2d44d74bb9770a62763f9f"
+          }
+        },
+        {
+          "client_id": "799251607216-01ot7nqqidbijoqe4tkaigrfb15vekrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrQnK9qNWZdjoZeT3tIiPg_pXo_wq3iR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799251607216-01ot7nqqidbijoqe4tkaigrfb15vekrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
