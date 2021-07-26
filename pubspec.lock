@@ -238,13 +238,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.0"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.13.3"
   http_parser:
     dependency: transitive
     description:
@@ -490,34 +483,6 @@ packages:
       url: "https://github.com/kokkiemouse/sliding_puzzle.git"
     source: git
     version: "1.0.0+1"
-  soundpool:
-    dependency: transitive
-    description:
-      name: soundpool
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
-  soundpool_macos:
-    dependency: transitive
-    description:
-      name: soundpool_macos
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
-  soundpool_platform_interface:
-    dependency: transitive
-    description:
-      name: soundpool_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
-  soundpool_web:
-    dependency: transitive
-    description:
-      name: soundpool_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
   source_span:
     dependency: transitive
     description:
@@ -571,8 +536,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "20210727"
-      resolved-ref: ce503df85087ff5279da49248dbb94c5ffc7f8b7
+      ref: "202107270716"
+      resolved-ref: "08b14791a7c9cc04d4b31d71ecd641875e123205"
       url: "https://github.com/kokkiemouse/flutter-tetris.git"
     source: git
     version: "1.0.0+1"
