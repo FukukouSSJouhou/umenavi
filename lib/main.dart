@@ -1,6 +1,7 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
+import 'package:UMENAVI/activities/vote/VoteMain.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -350,11 +351,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
                 try{
                   usercre=await _auth.signInWithCredential(credential);
                   fbuser=usercre.user;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                          content:Text(fbuser.uid)
-                      )
-                  );
+                  Navigator.push(context,MaterialPageRoute(builder: (conkun) => VoteMainPage(user:fbuser,auth: _auth,google_signin: _google_signin,)));
                 }catch(e){
                   print(e);
                 }
