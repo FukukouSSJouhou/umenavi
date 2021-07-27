@@ -1,3 +1,4 @@
+import 'package:UMENAVI/activities/vote/VoteStart.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,6 +40,28 @@ class _MiniGamePageState extends State<MiniGamePage>{
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
                             title:Text("Tetris Pazzle"),
+                            subtitle: Text("何の変哲もないテトリス"),
+                          )
+                      )
+                    ],
+                  )
+              )
+          ),
+          InkWell(
+              onTap: (){
+                HapticFeedback.heavyImpact();
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => VoteStartPage()));
+              },
+              child:Card(
+                  child:Column(
+                    children: <Widget>[
+                      /*SvgPicture.asset("images/icon/tetris-svgrepo-com.svg",
+                        semanticsLabel: 'map',height:320,width:320),*/
+                      Icon(Umenaviicon1.tetris_svgrepo_com,size:320),
+                      Container(
+                          margin: EdgeInsets.all(10.0),
+                          child:ListTile(
+                            title:Text("Google Pazzle"),
                             subtitle: Text("何の変哲もないテトリス"),
                           )
                       )

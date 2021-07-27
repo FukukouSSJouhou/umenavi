@@ -3,6 +3,7 @@ import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ const String applicationVersion= "Alpha 0.0.0.2 " + String.fromEnvironment("APPV
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   final prefs =await SharedPreferences.getInstance();
   final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
   return runApp(
