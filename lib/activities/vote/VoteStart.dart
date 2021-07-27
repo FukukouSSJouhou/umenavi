@@ -30,8 +30,10 @@ class VoteStartPage extends StatelessWidget{
               try{
                 usercre=await _auth.signInWithCredential(credential);
                 fbuser=usercre.user;
-                final snbar=SnackBar(
-                  content:Text(fbuser.uid)
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content:Text(fbuser.uid)
+                    )
                 );
               }catch(e){
                 print(e);
