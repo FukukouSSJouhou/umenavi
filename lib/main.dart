@@ -3,12 +3,14 @@ import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -208,6 +210,17 @@ class _HomeKunItemBuilder extends StatelessWidget{
   _HomeKunItemBuilder({Key key,@required this.index,@required this.context})
     :assert(index != null && context != null),
     super(key: key);
+
+  final _google_signin  = GoogleSignIn(scopes: [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ]);
+  GoogleSignInAccount googleUser;
+  GoogleSignInAuthentication googleAuth;
+  AuthCredential credential;
+  final _auth=FirebaseAuth.instance;
+  UserCredential usercre;
+  User fbuser;
   @override
   Widget build(BuildContext context){
     switch(index){
@@ -325,9 +338,26 @@ class _HomeKunItemBuilder extends StatelessWidget{
       case 4:
         return
           InkWell(
-              onTap: (){
+              onTap: () async{
                 HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => UmeyokoPage()));
+
+                googleUser=await _google_signin.signIn();
+                googleAuth=await googleUser.authentication;
+                credential=GoogleAuthProvider.credential(
+                    accessToken: googleAuth.accessToken,
+                    idToken: googleAuth.idToken
+                );
+                try{
+                  usercre=await _auth.signInWithCredential(credential);
+                  fbuser=usercre.user;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content:Text(fbuser.uid)
+                      )
+                  );
+                }catch(e){
+                  print(e);
+                }
               },
               child:Card(
                   child:Column(
@@ -337,8 +367,8 @@ class _HomeKunItemBuilder extends StatelessWidget{
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
-                            title:Text("ウメ横"),
-                            subtitle: Text("飯の値段が書いてあります。"),
+                            title:Text("事後アンケート"),
+                            subtitle: Text("事後アンケート"),
                           )
                       )
                     ],
