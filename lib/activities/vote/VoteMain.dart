@@ -39,8 +39,12 @@ class _VoteMainPageState extends State<VoteMainPage>{
         children: [
           Text("User id : " + widget.user.uid,
           style:TextStyle(
-            fontSize:10
-          ),)
+            fontSize:30
+          ),),
+          Text("User name : " + widget.user.displayName,
+            style:TextStyle(
+                fontSize:30
+            ),)
         ],
       ),
     );
