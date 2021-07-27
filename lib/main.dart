@@ -342,21 +342,30 @@ class _HomeKunItemBuilder extends StatelessWidget{
           InkWell(
               onTap: () async{
                 HapticFeedback.heavyImpact();
-
-                try{
-                  googleUser=await _google_signin.signIn();
-                  if(googleUser != null){
-                    googleAuth=await googleUser.authentication;
-                    credential=GoogleAuthProvider.credential(
-                      accessToken: googleAuth.accessToken,
-                      idToken: googleAuth.idToken
-                    );
-                    usercre=await _auth.signInWithCredential(credential);
-                    fbuser=usercre.user;
-                    Navigator.push(context,MaterialPageRoute(builder: (conkun) => VoteMainPage(user:fbuser,auth: _auth,google_signin: _google_signin,)));
+                if(UniversalPlatform.isAndroid) {
+                  try {
+                    googleUser = await _google_signin.signIn();
+                    if (googleUser != null) {
+                      googleAuth = await googleUser.authentication;
+                      credential = GoogleAuthProvider.credential(
+                          accessToken: googleAuth.accessToken,
+                          idToken: googleAuth.idToken
+                      );
+                      usercre = await _auth.signInWithCredential(credential);
+                      fbuser = usercre.user;
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (conkun) =>
+                              VoteMainPage(user: fbuser,
+                                auth: _auth,
+                                google_signin: _google_signin,)));
+                    }
+                  } catch (e) {
+                    print(e);
                   }
-                }catch(e){
-                  print(e);
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("この機能は意図的に無効化されています"),)
+                  );
                 }
               },
               child:Card(
