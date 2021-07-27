@@ -343,15 +343,17 @@ class _HomeKunItemBuilder extends StatelessWidget{
                 HapticFeedback.heavyImpact();
 
                 try{
-                googleUser=await _google_signin.signIn();
-                googleAuth=await googleUser.authentication;
-                credential=GoogleAuthProvider.credential(
-                    accessToken: googleAuth.accessToken,
-                    idToken: googleAuth.idToken
-                );
-                  usercre=await _auth.signInWithCredential(credential);
-                  fbuser=usercre.user;
-                  Navigator.push(context,MaterialPageRoute(builder: (conkun) => VoteMainPage(user:fbuser,auth: _auth,google_signin: _google_signin,)));
+                  googleUser=await _google_signin.signIn();
+                  if(googleUser != null){
+                    googleAuth=await googleUser.authentication;
+                    credential=GoogleAuthProvider.credential(
+                      accessToken: googleAuth.accessToken,
+                      idToken: googleAuth.idToken
+                    );
+                    usercre=await _auth.signInWithCredential(credential);
+                    fbuser=usercre.user;
+                    Navigator.push(context,MaterialPageRoute(builder: (conkun) => VoteMainPage(user:fbuser,auth: _auth,google_signin: _google_signin,)));
+                  }
                 }catch(e){
                   print(e);
                 }
