@@ -6019,7 +6019,7 @@ aLV:function(a,b,c,d,e){e=c.zl(e,t.H)
 return P.aq1(d,e)},
 aLU:function(a,b,c,d,e){e=c.a4m(e,t.H,t.Ce)
 return P.avN(d,e)},
-aLX:function(a,b,c,d){H.XI(H.c(d))},
+aLX:function(a,b,c,d){H.XI(d)},
 aLQ:function(a){$.a2.MZ(0,a)},
 axH:function(a,b,c,d,e){var s,r,q
 $.ano=P.aMv()
@@ -6919,7 +6919,7 @@ cM:function(a){return new P.Rs(a)},
 bk:function(a,b,c){return new P.eS(a,b,c)},
 aph:function(a,b,c,d,e){return new H.n7(a,b.h("@<0>").ab(c).ab(d).ab(e).h("n7<1,2,3,4>"))},
 DH:function(a){var s=J.ct(a),r=$.ano
-if(r==null)H.XI(H.c(s))
+if(r==null)H.XI(s)
 else r.$1(s)},
 apO:function(a,b,c,d){return new H.hz(a,b,c.h("@<0>").ab(d).h("hz<1,2>"))},
 aHZ:function(){$.anN()
@@ -36416,7 +36416,7 @@ jP:function(a,b){return null},
 jc:function(a){P.amg(null,null,this,a)},
 zS:function(a,b){return P.aq1(a,b)},
 zO:function(a,b){return P.avN(a,b)},
-MZ:function(a,b){H.XI(H.c(b))}}
+MZ:function(a,b){H.XI(b)}}
 P.ajJ.prototype={
 $0:function(){return this.a.nb(this.b,this.c)},
 $S:function(){return this.c.h("0()")}}
@@ -40676,7 +40676,7 @@ $1:function(a){return new D.ow(null)},
 $S:534}
 F.a5Y.prototype={
 $0:function(){X.cC()
-A.aOL(G.acy("images/icon/iconumenavi.svg",320,320),"2021 Fukushima High School SS club Jouhouhan","UMENAVI","Alpha 0.0.0.2 Build 11",this.a)},
+A.aOL(G.acy("images/icon/iconumenavi.svg",320,320),"2021 Fukushima High School SS club Jouhouhan","UMENAVI","Beta 0.0.0.2 Build 12",this.a)},
 $S:2}
 F.a5Z.prototype={
 $0:function(){X.cC()
