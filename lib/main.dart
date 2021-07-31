@@ -346,18 +346,31 @@ class _HomeKunItemBuilder extends StatelessWidget{
                   try {
                     googleUser = await _google_signin.signIn();
                     if (googleUser != null) {
-                      googleAuth = await googleUser.authentication;
-                      credential = GoogleAuthProvider.credential(
-                          accessToken: googleAuth.accessToken,
-                          idToken: googleAuth.idToken
-                      );
-                      usercre = await _auth.signInWithCredential(credential);
-                      fbuser = usercre.user;
-                      Navigator.push(context, MaterialPageRoute(
-                          builder: (conkun) =>
-                              VoteMainPage(user: fbuser,
-                                auth: _auth,
-                                google_signin: _google_signin,)));
+                      if (googleUser.email.endsWith(
+                          "fukushima-h@momo.fcs.ed.jp") == true ||
+                          googleUser.email == "umekoujouhouhan@gmail.com"){
+                        googleAuth = await googleUser.authentication;
+                        credential = GoogleAuthProvider.credential(
+                            accessToken: googleAuth.accessToken,
+                            idToken: googleAuth.idToken
+                        );
+                        usercre = await _auth.signInWithCredential(credential);
+                        fbuser = usercre.user;
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (conkun) =>
+                                VoteMainPage(user: fbuser,
+                                  auth: _auth,
+                                  google_signin: _google_signin,)));
+                      }else{
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                                content: Text("福高生以外はお家でゲームでもして、どうぞ。")
+                            )
+                        );
+                        //Logout
+                        _google_signin.signOut();
+                      }
                     }
                   } catch (e) {
                     print(e);

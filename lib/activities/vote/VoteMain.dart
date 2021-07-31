@@ -44,6 +44,11 @@ class _VoteMainPageState extends State<VoteMainPage>{
           Text("User name : " + widget.user.displayName,
             style:TextStyle(
                 fontSize:30
+            ),),
+
+          Text("User email : " + widget.user.email,
+            style:TextStyle(
+                fontSize:30
             ),)
         ],
       ),
