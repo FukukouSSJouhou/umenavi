@@ -371,9 +371,17 @@ class _HomeKunItemBuilder extends StatelessWidget{
                         //Logout
                         _google_signin.signOut();
                       }
+                    }else{
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content:Text("ログイン失敗!")
+                        )
+                      );
                     }
                   } catch (e) {
-                    print(e);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(e),)
+                    );
                   }
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(
