@@ -25,7 +25,7 @@ import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 import 'package:universal_platform/universal_platform.dart';
 String applicationName= "UMENAVI";
-const String applicationVersion= "Alpha 0.0.0.2 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
+const String applicationVersion= "Beta 0.0.0.2 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
