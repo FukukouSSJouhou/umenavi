@@ -342,47 +342,10 @@ class _HomeKunItemBuilder extends StatelessWidget{
           InkWell(
               onTap: () async{
                 HapticFeedback.heavyImpact();
-                if(UniversalPlatform.isAndroid) {
-                  try {
-                    googleUser = await _google_signin.signIn();
-                    if (googleUser != null) {
-                      if (googleUser.email.endsWith(
-                          "fukushima-h@momo.fcs.ed.jp") == true ||
-                          googleUser.email == "umekoujouhouhan@gmail.com"){
-                        googleAuth = await googleUser.authentication;
-                        credential = GoogleAuthProvider.credential(
-                            accessToken: googleAuth.accessToken,
-                            idToken: googleAuth.idToken
-                        );
-                        usercre = await _auth.signInWithCredential(credential);
-                        fbuser = usercre.user;
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (conkun) =>
-                                VoteMainPage(user: fbuser,
-                                  auth: _auth,
-                                  google_signin: _google_signin,)));
-                      }else{
-
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: Text("福高生以外はお家でゲームでもして、どうぞ。")
-                            )
-                        );
-                        //Logout
-                        _google_signin.signOut();
-                      }
-                    }else{
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content:Text("ログイン失敗!")
-                        )
-                      );
-                    }
-                  } catch (e) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(e),)
-                    );
-                  }
+                if(true) {
+                  Navigator.push(context,MaterialPageRoute(builder: (con1) => VoteMainPage(
+                    auth: _auth,google_signin: _google_signin,
+                  )));
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("この機能は意図的に無効化されています"),)
