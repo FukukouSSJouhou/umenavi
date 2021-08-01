@@ -50,9 +50,14 @@ class _VoteMainPageState extends State<VoteMainPage>{
         Navigator.of(context).pop();
       }
     } catch (e) {
+      print(e);
+
       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e),)
+          SnackBar(
+              content:Text("閉じたりするとこうなるぞ!")
+          )
       );
+      Navigator.of(context).pop();
     }
   }
   @override
