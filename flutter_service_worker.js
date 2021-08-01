@@ -76,7 +76,7 @@ const RESOURCES = {
 "manifest.json": "4a89203f52a7689216c75d80a8fbc0ee",
 "version.json": "2fcf4c9ce005e70bb8f4faaa587fa215",
 "sw.js": "1ce0f19e10edc72af46cd8e9a511665e",
-"main.dart.js": "0359b3d1895148d7658391f6eefd1dbd",
+"main.dart.js": "7581b7dfafc62ea3fedfce347c279f68",
 "index.html": "fd5bc9d48c4e7b58f15042a429726346",
 "/": "fd5bc9d48c4e7b58f15042a429726346"
 };
