@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
@@ -111,6 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     );
+    DivElement loadingElement = querySelector(".loading");
+    if(loadingElement != null) loadingElement.remove();
   }
   @override
   void dispose() {
