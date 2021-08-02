@@ -8,6 +8,7 @@
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
+    "scope": "/umenavi_web/",
     "icons": [
         {
             "src": "icons/Icon-192.png",
