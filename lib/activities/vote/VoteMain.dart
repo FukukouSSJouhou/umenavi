@@ -53,10 +53,9 @@ class _VoteMainPageState extends State<VoteMainPage>{
       }
     } catch (e) {
       print(e);
-
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-              content:Text("閉じたりするとこうなるぞ!")
+              content:Text("閉じたりするとこうなるぞ! " + e.hashCode.toString())
           )
       );
       Navigator.of(context).pop();
