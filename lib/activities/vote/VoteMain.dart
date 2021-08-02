@@ -18,7 +18,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
 
   Future<void> loginkun(BuildContext context) async{
     try {
-      widget.googleUser = await widget.google_signin.signIn();
+      widget.googleUser = await widget.google_signin.signInSilently();
       if (widget.googleUser != null) {
         if (widget.googleUser.email.endsWith(
             "fukushima-h@momo.fcs.ed.jp") == true ||
