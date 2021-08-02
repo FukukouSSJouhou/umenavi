@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 class VoteMainPage extends StatefulWidget{
   User user;
@@ -51,11 +52,30 @@ class _VoteMainPageState extends State<VoteMainPage>{
         );
         Navigator.of(context).pop();
       }
-    } catch (e) {
+    }
+    on PlatformException catch (e) {
+      if(e.code == "popup_blocked_by_browser"){
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                content:Text("ブラウザ設定でポップアップを許可してください。 ")
+            )
+        );
+        Navigator.of(context).pop();
+      }else{
+
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                content:Text("閉じたりするとこうなるぞ! ")
+            )
+        );
+        Navigator.of(context).pop();
+      }
+    }
+    on Exception catch (e) {
       print(e);
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-              content:Text("閉じたりするとこうなるぞ! " + e.hashCode.toString())
+              content:Text("閉じたりするとこうなるぞ! ")
           )
       );
       Navigator.of(context).pop();
