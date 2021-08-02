@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
@@ -26,6 +24,10 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 import 'package:universal_platform/universal_platform.dart';
+import 'htmlstub.dart'
+  if(dart.library.js) 'dart:html'
+  if(dart.library.io) 'htmlstub2.dart';
+
 String applicationName= "UMENAVI";
 const String applicationVersion= "Beta 0.0.0.2 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
@@ -113,8 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     );
-    DivElement loadingElement = querySelector(".loading");
-    if(loadingElement != null) loadingElement.remove();
+    if(UniversalPlatform.isWeb) {
+      DivElement loadingElement = querySelector(".loading");
+      if (loadingElement != null) loadingElement.remove();
+    }
   }
   @override
   void dispose() {
