@@ -24,9 +24,9 @@ import 'activities/miniGame.dart';
 import "widgets/CustomAppBar.dart";
 import "activities/SecretPage.dart";
 import 'package:universal_platform/universal_platform.dart';
-import 'htmlstub.dart'
-  if(dart.library.js) 'dart:html'
-  if(dart.library.io) 'htmlstub2.dart';
+import "web/LoadingClass.dart"
+  if (dart.library.io) "web/webLoading_stub.dart"
+  if (dart.library.js) "web/webLoading.dart";
 
 String applicationName= "UMENAVI";
 const String applicationVersion= "Beta 0.0.0.2 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
@@ -112,13 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     _pageController = PageController(
       initialPage: _selectedIndex,
-
-
     );
-    if(UniversalPlatform.isWeb) {
-      DivElement loadingElement = querySelector(".loading");
-      if (loadingElement != null) loadingElement.remove();
-    }
+    LoadingClass.RemoveHeader();
   }
   @override
   void dispose() {
