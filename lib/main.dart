@@ -505,6 +505,7 @@ class OtherPageState extends StatelessWidget{
   Widget build(BuildContext context){
     return ListView(
       children: <Widget>[
+        /*
         InkWell(
             onTap: (){
               HapticFeedback.heavyImpact();
@@ -571,6 +572,41 @@ class OtherPageState extends StatelessWidget{
                   ],
                 )
             )
+        )
+         */
+        ListTile(
+          leading:Icon(Icons.settings),
+          title:Text("Settings"),
+          subtitle: Text("アプリケーション設定"),
+          onTap: () {
+            HapticFeedback.heavyImpact();
+            Navigator.push(context,MaterialPageRoute(builder: (conkun) => SettingsPage()));
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.info),
+          title:Text("About"),
+          subtitle:Text("About this App"),
+          onTap:(){
+            HapticFeedback.heavyImpact();
+            showLicensePage(
+              context:context,
+              applicationName: applicationName,
+              applicationVersion: applicationVersion,
+              //applicationIcon: FlutterLogo(),
+              applicationIcon: SvgPicture.asset("images/icon/iconumenavi.svg",height: 320,width: 320,),
+              applicationLegalese: applicationLegalese,
+            );
+          }
+        ),
+        ListTile(
+          leading: Icon(Icons.description),
+          title:Text("About Source Code"),
+          subtitle: Text("About Source Code"),
+          onTap:(){
+            HapticFeedback.heavyImpact();
+            Navigator.push(context,MaterialPageRoute(builder: (conkun) => AboutSourceCodePage()));
+          }
         )
       ],
     );
