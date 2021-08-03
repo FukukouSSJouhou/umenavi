@@ -515,7 +515,7 @@ class OtherPageState extends StatelessWidget{
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => SettingsPage()));
           },
         ),
-        /*ListTile(
+        ListTile(
           leading:Icon(Icons.help) ,
           title:Text("Help"),
           subtitle:Text("Help"),
@@ -523,7 +523,7 @@ class OtherPageState extends StatelessWidget{
             HapticFeedback.heavyImpact();
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => HelpMainPage()));
           },
-        ),*/
+        ),
         ListTile(
           leading: Icon(Icons.info),
           title:Text("About"),
@@ -544,9 +544,9 @@ class OtherPageState extends StatelessWidget{
           leading: Icon(Icons.description),
           title:Text("About Source Code"),
           subtitle: Text("About Source Code"),
-          onTap:(){
+          onTap:() async{
             HapticFeedback.heavyImpact();
-            Navigator.push(context,MaterialPageRoute(builder: (conkun) => AboutSourceCodePage()));
+            await launch("https://fukukoussjouhou.github.io/umenavi_help/");
           }
         )
       ],
