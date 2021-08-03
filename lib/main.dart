@@ -519,9 +519,9 @@ class OtherPageState extends StatelessWidget{
           leading:Icon(Icons.help) ,
           title:Text("Help"),
           subtitle:Text("Help"),
-          onTap: (){
+          onTap: () async{
             HapticFeedback.heavyImpact();
-            Navigator.push(context,MaterialPageRoute(builder: (conkun) => HelpMainPage()));
+            await launch("https://fukukoussjouhou.github.io/umenavi_help/");
           },
         ),
         ListTile(
