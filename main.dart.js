@@ -41508,7 +41508,7 @@ $1:function(a){return new D.p3(null)},
 $S:569}
 F.a7T.prototype={
 $0:function(){X.cJ()
-A.aS4(G.aeA("images/icon/iconumenavi.svg",320,320),"2021 Fukushima High School SS club Jouhouhan","UMENAVI","Beta 0.0.0.2 Build 16",this.a)},
+A.aS4(G.aeA("images/icon/iconumenavi.svg",320,320),"2021 Fukushima High School SS club Jouhouhan","UMENAVI","Beta 0.0.0.2 Build 17",this.a)},
 $S:2}
 F.a7U.prototype={
 $0:function(){X.cJ()
