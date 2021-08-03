@@ -1,5 +1,6 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
+import 'package:UMENAVI/activities/helps/HelpMainPage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/activities/vote/VoteMain.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
@@ -514,6 +515,15 @@ class OtherPageState extends StatelessWidget{
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => SettingsPage()));
           },
         ),
+        /*ListTile(
+          leading:Icon(Icons.help) ,
+          title:Text("Help"),
+          subtitle:Text("Help"),
+          onTap: (){
+            HapticFeedback.heavyImpact();
+            Navigator.push(context,MaterialPageRoute(builder: (conkun) => HelpMainPage()));
+          },
+        ),*/
         ListTile(
           leading: Icon(Icons.info),
           title:Text("About"),
