@@ -48,6 +48,10 @@ class _VoteMainPageState extends State<VoteMainPage>{
   var goodCls1Controller=TextEditingController();
   var goodCls2Controller=TextEditingController();
   var goodCls3Controller=TextEditingController();
+  BunkasaiClasskun MVPCls1;
+  BunkasaiClasskun KyakuhonCls1;
+  var mvpCls1Controller=TextEditingController();
+  var kyakuhonCls1Controller=TextEditingController();
   @override
   void initState() {
     // TODO: implement initState
@@ -70,6 +74,18 @@ class _VoteMainPageState extends State<VoteMainPage>{
     );
     goodCls3Controller.value=TextEditingValue(
         text:BunkasaiClasskun_to_str(GoodCls3),
+        selection: TextSelection.fromPosition(
+            TextPosition(offset: "aaa".length)
+        )
+    );
+    mvpCls1Controller.value=TextEditingValue(
+        text:BunkasaiClasskun_to_str(MVPCls1),
+        selection: TextSelection.fromPosition(
+            TextPosition(offset: "aaa".length)
+        )
+    );
+    kyakuhonCls1Controller.value=TextEditingValue(
+        text:BunkasaiClasskun_to_str(KyakuhonCls1),
         selection: TextSelection.fromPosition(
             TextPosition(offset: "aaa".length)
         )
@@ -199,6 +215,83 @@ class _VoteMainPageState extends State<VoteMainPage>{
                     labelText: "クラス名",
                   ),
                 ),
+
+                Center(
+                  child:Text("\n良かった出演者がいるクラス\n",style:TextStyle(fontSize: 20)),
+                ),
+                TextField(readOnly: true,
+                  controller: mvpCls1Controller,
+                  onTap: (){
+                    List<Text> mvpcls=[];
+                    BunkasaiClasskun.values.forEach((valueniki) {
+                      if (valueniki != BunkasaiClasskun.NONEKUN) {
+                        mvpcls.add(Text(BunkasaiClasskun_to_str(valueniki)));
+                      }
+                    }
+                    );
+                    showModalBottomSheet(context: context, builder: (_ct){
+                      return Container(
+                        child:GestureDetector(
+                            onTap: () => Navigator.pop(_ct),
+                            child:CupertinoPicker(itemExtent: 30,
+                              backgroundColor: Colors.white,
+                              children: mvpcls,
+                              onSelectedItemChanged: (int vl){
+                                setState(() {
+                                  MVPCls1=str_to_bunkasaiClass(mvpcls[vl].data);
+                                });
+                              },
+                            )
+                        ),
+                        height: MediaQuery.of(context).size.height /3,
+
+                      );
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border:OutlineInputBorder(),
+                    labelText: "クラス名",
+                  ),
+                ),
+                Center(
+                  child:Text("\n良かった脚本作者がいるクラス\n",style:TextStyle(fontSize: 20)),
+                ),
+                TextField(readOnly: true,
+                  controller: kyakuhonCls1Controller,
+                  onTap: (){
+                    List<Text> kyakucls=[];
+                    BunkasaiClasskun.values.forEach((valueniki) {
+                      if (valueniki != BunkasaiClasskun.NONEKUN) {
+                        kyakucls.add(Text(BunkasaiClasskun_to_str(valueniki)));
+                      }
+                    }
+                    );
+                    showModalBottomSheet(context: context, builder: (_ct){
+                      return Container(
+                        child:GestureDetector(
+                            onTap: () => Navigator.pop(_ct),
+                            child:CupertinoPicker(itemExtent: 30,
+                              backgroundColor: Colors.white,
+                              children: kyakucls,
+                              onSelectedItemChanged: (int vl){
+                                setState(() {
+                                  KyakuhonCls1=str_to_bunkasaiClass(kyakucls[vl].data);
+                                });
+                              },
+                            )
+                        ),
+                        height: MediaQuery.of(context).size.height /3,
+
+                      );
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border:OutlineInputBorder(),
+                    labelText: "クラス名",
+                  ),
+                ),
+
+
               ]
             );
           }else{
