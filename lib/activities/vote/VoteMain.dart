@@ -15,7 +15,87 @@ class VoteMainPage extends StatefulWidget{
   VoteMainPage({Key key,this.google_signin,this.auth}):super(key: key);
   _VoteMainPageState createState()=>_VoteMainPageState();
 }
+enum BunkasaiClasskun{
+  C11,
+  C12,
+  C13,
+  C14,
+  C15,
+  C16,
+  C17,
+  C21,
+  C22,
+  C23,
+  C24,
+  C25,
+  C26,
+  C27,
+  C31,
+  C32,
+  C33,
+  C34,
+  C35,
+  C36,
+  C37
+}
 class _VoteMainPageState extends State<VoteMainPage>{
+  BunkasaiClasskun GoodCls1;
+  BunkasaiClasskun GoodCls2;
+  BunkasaiClasskun GoodCls3;
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: FutureBuilder(
+        future: loginkun(context),
+        builder:(BuildContext context,AsyncSnapshot<void> snapshot){
+          if(widget.user != null) {
+            return ListView(
+              children: [
+
+              ],
+            );
+          }else{
+            return ListView(
+                children:[
+                  Center(
+                    child:Text("\n\n処理中です\n\n\n\n\n",
+                    style: TextStyle(fontSize: 35),)
+                  ),
+                  Center(
+                    child:SizedBox(
+                      width: 250,
+                      height: 250,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 15,
+                      ),
+                    )
+                  ),
+                ]);
+          }
+        }
+      ),
+      appBar: AppBar(
+        title:Text("Vote"),
+        actions: [
+          PopupMenuButton<int>(
+            itemBuilder: (context2)=>[
+              PopupMenuItem(
+                child: Text("ログアウト"),
+                value:0 ,
+              )
+            ],
+            onSelected: (valkun) async{
+              if(valkun == 0){
+                widget.auth.signOut();
+                widget.google_signin.signOut();
+                Navigator.of(context).pop();
+              }
+            },
+          )
+        ],
+      )
+    );
+  }
 
   Future<void> loginkun(BuildContext context) async{
     try {
@@ -80,71 +160,5 @@ class _VoteMainPageState extends State<VoteMainPage>{
       );
       Navigator.of(context).pop();
     }
-  }
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title:Text("Vote Logins??"),
-        actions: [
-          PopupMenuButton<int>(
-            itemBuilder: (context2)=>[
-              PopupMenuItem(
-                child: Text("ログアウト"),
-                value:0 ,
-              )
-            ],
-            onSelected: (valkun) async{
-              if(valkun == 0){
-                widget.auth.signOut();
-                widget.google_signin.signOut();
-                Navigator.of(context).pop();
-              }
-            },
-          )
-        ],
-      ),
-      body: FutureBuilder(
-        future: loginkun(context),
-        builder:(BuildContext context,AsyncSnapshot<void> snapshot){
-          if(widget.user != null) {
-            return ListView(
-              children: [
-                Text("User id : " + widget.user.uid,
-                  style: TextStyle(
-                      fontSize: 30
-                  ),),
-                Text("User name : " + widget.user.displayName,
-                  style: TextStyle(
-                      fontSize: 30
-                  ),),
-
-                Text("User email : " + widget.user.email,
-                  style: TextStyle(
-                      fontSize: 30
-                  ),)
-              ],
-            );
-          }else{
-            return ListView(
-                children:[
-                  Center(
-                    child:Text("\n\n処理中です\n\n\n\n\n",
-                    style: TextStyle(fontSize: 35),)
-                  ),
-                  Center(
-                    child:SizedBox(
-                      width: 250,
-                      height: 250,
-                      child: CircularProgressIndicator(
-                        strokeWidth: 15,
-                      ),
-                    )
-                  ),
-                ]);
-          }
-        }
-      )
-    );
   }
 }
