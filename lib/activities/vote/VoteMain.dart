@@ -299,6 +299,17 @@ class _VoteMainPageState extends State<VoteMainPage>{
             icon: Icon(Icons.send),
             onPressed: (){
               HapticFeedback.heavyImpact();
+              if(widget.user == null){
+                return;
+              }
+              if(GoodCls1 == null || GoodCls2 == null || GoodCls3 == null
+              || KyakuhonCls1 == null || MVPCls1 == null){
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text("全部記入してから送信しましょう。無効票はダメです。")
+                    )
+                );
+              }
               Navigator.push(context,MaterialPageRoute(builder: (_) =>
                   VotingPage(user_email: widget.user.email,user_id: widget.user.uid,
                     GoodCls1: GoodCls1, GoodCls2: GoodCls2,GoodCls3: GoodCls3,
