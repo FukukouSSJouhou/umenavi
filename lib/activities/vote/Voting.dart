@@ -29,12 +29,14 @@ class _VotingPageState extends State<VotingPage>{
       body:FutureBuilder(
         future: sendKun(context),
         builder: (BuildContext conkun,AsyncSnapshot<bool> snapshot) {
+          Color prColorkun=null;
           if (snapshot.hasData) {
             String msgpartkun="";
             if(snapshot.data == true){
               msgpartkun="\n\n送信完了しました。\n";
             }else{
               msgpartkun="\n\n送信に失敗しました。\n";
+              prColorkun=Colors.red;
             }
             return
               InkWell(
@@ -58,6 +60,7 @@ class _VotingPageState extends State<VotingPage>{
                         child: CircularProgressIndicator(
                           strokeWidth: 15,
                           value: 1.0,
+                          color: prColorkun,
                         ),
                       )
                     ),
