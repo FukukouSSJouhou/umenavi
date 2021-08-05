@@ -1,6 +1,8 @@
 import 'package:UMENAVI/bunkasaidbkun/BunkasaiDBSet.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:universal_platform/universal_platform.dart';
 class VotingPage extends StatefulWidget{
   final String user_id;
   final String user_email;
@@ -9,16 +11,16 @@ class VotingPage extends StatefulWidget{
   final BunkasaiClasskun GoodCls3;
   final BunkasaiClasskun MVPCls;
   final BunkasaiClasskun KyakuhonGoodCls;
+  List<int> bunkasailskun=[];
   VotingPage({Key key,@required this.user_id,@required this.user_email,@required this.GoodCls1,@required this.GoodCls2,@required this.GoodCls3,@required this.KyakuhonGoodCls,@required this.MVPCls}):super(key:key);
   _VotingPageState createState() => _VotingPageState();
 }
 class _VotingPageState extends State<VotingPage>{
   @override
   Widget build(BuildContext context){
-    List<int> bunkasailskun=[];
-    bunkasailskun.add(widget.GoodCls1.index);
-    bunkasailskun.add(widget.GoodCls2.index);
-    bunkasailskun.add(widget.GoodCls3.index);
+    widget.bunkasailskun.add(widget.GoodCls1.index);
+    widget.bunkasailskun.add(widget.GoodCls2.index);
+    widget.bunkasailskun.add(widget.GoodCls3.index);
 
     return Scaffold(
       appBar: AppBar(
@@ -86,6 +88,22 @@ class _VotingPageState extends State<VotingPage>{
   }
   Future<bool> sendKun(BuildContext context) async{
     bool resultdata=true;
+    if(UniversalPlatform.isAndroid == true){
+      resultdata=true;
+      await FirebaseFirestore.instance
+        .collection("votes")
+        .doc(widget.user_id)
+        .set(
+          {
+            "user_email":widget.user_email,
+            "mvp":widget.MVPCls.index,
+            "kyakuhon":widget.KyakuhonGoodCls.index,
+            "goodcls":widget.bunkasailskun
+          }
+        );
+    }else{
+      resultdata=false;
+    }
     return resultdata;
   }
 }
