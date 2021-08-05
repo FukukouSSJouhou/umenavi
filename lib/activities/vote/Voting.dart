@@ -1,5 +1,6 @@
 import 'package:UMENAVI/bunkasaidbkun/BunkasaiDBSet.dart';
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 class VotingPage extends StatefulWidget{
   final String user_id;
   final String user_email;
@@ -14,10 +15,10 @@ class VotingPage extends StatefulWidget{
 class _VotingPageState extends State<VotingPage>{
   @override
   Widget build(BuildContext context){
-    List<String> bunkasailskun=[];
-    bunkasailskun.add(BunkasaiClasskun_to_str(widget.GoodCls1));
-    bunkasailskun.add(BunkasaiClasskun_to_str(widget.GoodCls2));
-    bunkasailskun.add(BunkasaiClasskun_to_str(widget.GoodCls3));
+    List<int> bunkasailskun=[];
+    bunkasailskun.add(widget.GoodCls1.index);
+    bunkasailskun.add(widget.GoodCls2.index);
+    bunkasailskun.add(widget.GoodCls3.index);
 
     return Scaffold(
       appBar: AppBar(
@@ -25,39 +26,53 @@ class _VotingPageState extends State<VotingPage>{
       ),
       body:FutureBuilder(
         future: sendKun(context),
-        builder: (BuildContext conkun,AsyncSnapshot<void> snapshot){
-          return ListView(
-            children: [
-              ListTile(
-                title: Text(widget.user_email)
-              ),
-              ListTile(
-                  title: Text(widget.user_id)
-              ),
-              ListTile(
-                  title: Text(BunkasaiClasskun_to_str(widget.MVPCls))
-              ),
-              ListTile(
-                  title: Text(BunkasaiClasskun_to_str(widget.KyakuhonGoodCls))
-              ),
-              ListTile(
-                  title: Text(bunkasailskun[0])
-              ),
-              ListTile(
-                  title: Text(bunkasailskun[1])
-              ),
-              ListTile(
-                  title: Text(bunkasailskun[2])
-              ),
+        builder: (BuildContext conkun,AsyncSnapshot<bool> snapshot) {
+          if (snapshot.hasData) {
+            if(snapshot.data == true) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text("送信成功です!")
+                  )
+              );
+            }else{
 
-
-            ],
-          );
-        },
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text("送信に失敗しました。")
+                  )
+              );
+            }
+            Navigator.popUntil(context, (route) => route.isFirst);
+            return ListView(
+              children: [
+                Center(
+                  child: Text("バグってるみたいですねw"),
+                )
+              ],
+            );
+          } else {
+            return ListView(
+                children: [
+                  Center(
+                      child: Text("\n\n処理中です\n\n\n\n\n",
+                        style: TextStyle(fontSize: 35),)
+                  ),
+                  Center(
+                      child: SizedBox(
+                        width: 250,
+                        height: 250,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 15,
+                        ),
+                      )
+                  ),
+                ]);
+          }
+        }
       )
     );
   }
-  Future<void> sendKun(BuildContext context) async{
-
+  Future<bool> sendKun(BuildContext context) async{
+    return true;
   }
 }
