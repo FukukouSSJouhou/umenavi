@@ -300,9 +300,13 @@ class _VoteMainPageState extends State<VoteMainPage>{
             onPressed: (){
               HapticFeedback.heavyImpact();
               Navigator.push(context,MaterialPageRoute(builder: (_) =>
-                  VotingPage()
+                  VotingPage(user_email: widget.user.email,user_id: widget.user.uid,
+                    GoodCls1: GoodCls1, GoodCls2: GoodCls2,GoodCls3: GoodCls3,
+                    KyakuhonGoodCls: KyakuhonCls1,MVPCls: MVPCls1,
+                  )
               ));
             },
+            tooltip: "送信",
           ),
           PopupMenuButton<int>(
             itemBuilder: (context2)=>[
