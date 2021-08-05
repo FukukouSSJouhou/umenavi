@@ -28,33 +28,45 @@ class _VotingPageState extends State<VotingPage>{
         future: sendKun(context),
         builder: (BuildContext conkun,AsyncSnapshot<bool> snapshot) {
           if (snapshot.hasData) {
-            if(snapshot.data == true) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text("送信成功です!")
-                  )
-              );
+            String msgpartkun="";
+            if(snapshot.data == true){
+              msgpartkun="\n\n送信完了しました。\n";
             }else{
-
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text("送信に失敗しました。")
-                  )
-              );
+              msgpartkun="\n\n送信に失敗しました。\n";
             }
-            Navigator.popUntil(context, (route) => route.isFirst);
-            return ListView(
-              children: [
-                Center(
-                  child: Text("バグってるみたいですねw"),
+            return
+              InkWell(
+                onTap: (){
+                 Navigator.popUntil(context, (route) => route.isFirst);
+                },
+                child: ListView(
+                  children: [
+                    Center(
+                      child: Text(msgpartkun,
+                      style: TextStyle(fontSize: 35),)
+                    ),
+                    Center(
+                      child: Text("画面をタップしてください。\n\n\n\n\n",
+                      style: TextStyle(fontSize: 20),)
+                    ),
+                    Center(
+                      child: SizedBox(
+                        width: 250,
+                        height: 250,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 15,
+                          value: 1.0,
+                        ),
+                      )
+                    ),
+                  ]
                 )
-              ],
-            );
+              );
           } else {
             return ListView(
                 children: [
                   Center(
-                      child: Text("\n\n処理中です\n\n\n\n\n",
+                      child: Text("\n\n送信中です\n\n\n\n\n",
                         style: TextStyle(fontSize: 35),)
                   ),
                   Center(
@@ -73,6 +85,7 @@ class _VotingPageState extends State<VotingPage>{
     );
   }
   Future<bool> sendKun(BuildContext context) async{
-    return true;
+    bool resultdata=true;
+    return resultdata;
   }
 }
