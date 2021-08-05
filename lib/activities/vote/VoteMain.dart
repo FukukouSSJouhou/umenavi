@@ -20,14 +20,14 @@ class VoteMainPage extends StatefulWidget{
 }
 
 class _VoteMainPageState extends State<VoteMainPage>{
-  BunkasaiClasskun GoodCls1;
-  BunkasaiClasskun GoodCls2;
-  BunkasaiClasskun GoodCls3;
+  BunkasaiClasskun GoodCls1=BunkasaiClasskun.NONEKUN;
+  BunkasaiClasskun GoodCls2=BunkasaiClasskun.NONEKUN;
+  BunkasaiClasskun GoodCls3=BunkasaiClasskun.NONEKUN;
   var goodCls1Controller=TextEditingController();
   var goodCls2Controller=TextEditingController();
   var goodCls3Controller=TextEditingController();
-  BunkasaiClasskun MVPCls1;
-  BunkasaiClasskun KyakuhonCls1;
+  BunkasaiClasskun MVPCls1=BunkasaiClasskun.NONEKUN;
+  BunkasaiClasskun KyakuhonCls1=BunkasaiClasskun.NONEKUN;
   var mvpCls1Controller=TextEditingController();
   var kyakuhonCls1Controller=TextEditingController();
   @override
@@ -302,8 +302,8 @@ class _VoteMainPageState extends State<VoteMainPage>{
               if(widget.user == null){
                 return;
               }
-              if(GoodCls1 == null || GoodCls2 == null || GoodCls3 == null
-              || KyakuhonCls1 == null || MVPCls1 == null){
+              if(GoodCls1 == BunkasaiClasskun.NONEKUN || GoodCls2 == BunkasaiClasskun.NONEKUN || GoodCls3 == BunkasaiClasskun.NONEKUN
+              || KyakuhonCls1 == BunkasaiClasskun.NONEKUN || MVPCls1 == BunkasaiClasskun.NONEKUN){
                 ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                         content: Text("全部記入してから送信しましょう。無効票はダメです。")
