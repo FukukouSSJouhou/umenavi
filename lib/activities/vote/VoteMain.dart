@@ -309,6 +309,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
                         content: Text("全部記入してから送信しましょう。無効票はダメです。")
                     )
                 );
+                return;
               }
               Navigator.push(context,MaterialPageRoute(builder: (_) =>
                   VotingPage(user_email: widget.user.email,user_id: widget.user.uid,
