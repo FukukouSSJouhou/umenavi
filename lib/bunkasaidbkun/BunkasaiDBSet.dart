@@ -91,7 +91,7 @@ String BunkasaiClasskun_to_str(BunkasaiClasskun b1){
       return "3-7";
       break;
     case BunkasaiClasskun.NONEKUN:
-      return "none";
+      return "";
       break;
   }
   return resultkun;
