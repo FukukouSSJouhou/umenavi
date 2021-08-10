@@ -18,7 +18,7 @@ class _Check_CodePage_State extends State<Check_CodePage>{
             icon: Icon(Icons.send),
             onPressed: () async{
               HapticFeedback.heavyImpact();
-              if(controller.text != "114514"){
+              if(controller.text != "132465"){
                 setState(() {
                   hasError=true;
                 });
