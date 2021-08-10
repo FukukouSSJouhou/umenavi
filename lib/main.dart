@@ -1,5 +1,6 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
+import 'package:UMENAVI/activities/admin/Check_CodePage.dart';
 import 'package:UMENAVI/activities/helps/HelpMainPage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/activities/vote/VoteMain.dart';
@@ -454,8 +455,8 @@ class OtherPageState extends StatelessWidget{
               if(isenabled_secret == true){
                 return ListTile(
                     leading: Icon(Icons.description),
-                    title:Text("About Secret Code"),
-                    subtitle: Text("About Source Code"),
+                    title:Text("Secret Menu"),
+                    subtitle: Text("Secret Menu"),
                     onTap:() async{
                       HapticFeedback.heavyImpact();
                       await launch("https://fukukoussjouhou.github.io/umenavi_help/");
