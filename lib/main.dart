@@ -151,12 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _incrementCounter();
           if(_counter > 24){
             HapticFeedback.heavyImpact();
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: const Text("Secret Tab!!"),
-
-              )
-            );
+            _counter=0;
             Navigator.push(context,MaterialPageRoute(builder: (conkun) => SecretPage()));
           }
         },
@@ -400,6 +395,9 @@ class HomeKunPageState extends StatelessWidget{
     }
 }
 class OtherPageState extends StatelessWidget{
+  Future<SharedPreferences> _get_prefs_int() async{
+    return await SharedPreferences.getInstance();
+  }
   @override
   Widget build(BuildContext context){
     return ListView(
@@ -445,6 +443,30 @@ class OtherPageState extends StatelessWidget{
           onTap:() async{
             HapticFeedback.heavyImpact();
             await launch("https://fukukoussjouhou.github.io/umenavi_help/");
+          }
+        ),
+        FutureBuilder(
+          future:_get_prefs_int(),
+          builder:(BuildContext context22,AsyncSnapshot<SharedPreferences> snapshot){
+            if(snapshot.hasData){
+              SharedPreferences sprekun=snapshot.data;
+              bool isenabled_secret=sprekun.getBool("secret_enabled") ?? false;
+              if(isenabled_secret == true){
+                return ListTile(
+                    leading: Icon(Icons.description),
+                    title:Text("About Secret Code"),
+                    subtitle: Text("About Source Code"),
+                    onTap:() async{
+                      HapticFeedback.heavyImpact();
+                      await launch("https://fukukoussjouhou.github.io/umenavi_help/");
+                    }
+                );
+              }else{
+                return Container();
+              }
+            }else{
+              return Container();
+            }
           }
         )
       ],
