@@ -1,6 +1,7 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/admin/Check_CodePage.dart';
+import 'package:UMENAVI/activities/admin/adminmain.dart';
 import 'package:UMENAVI/activities/helps/HelpMainPage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/activities/vote/VoteMain.dart';
@@ -396,6 +397,16 @@ class HomeKunPageState extends StatelessWidget{
     }
 }
 class OtherPageState extends StatelessWidget{
+  final _google_signin  = GoogleSignIn(scopes: [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ]);
+  GoogleSignInAccount googleUser;
+  GoogleSignInAuthentication googleAuth;
+  AuthCredential credential;
+  final _auth=FirebaseAuth.instance;
+  UserCredential usercre;
+  User fbuser;
   Future<SharedPreferences> _get_prefs_int() async{
     return await SharedPreferences.getInstance();
   }
@@ -459,7 +470,7 @@ class OtherPageState extends StatelessWidget{
                     subtitle: Text("Secret Menu"),
                     onTap:() async{
                       HapticFeedback.heavyImpact();
-                      await launch("https://fukukoussjouhou.github.io/umenavi_help/");
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => new AdminMainPage(google_signin: _google_signin,auth: _auth,)));
                     }
                 );
               }else{
