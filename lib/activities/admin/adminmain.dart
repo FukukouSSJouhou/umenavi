@@ -19,6 +19,10 @@ class AdminMainPage extends StatefulWidget{
   _AdminMainPageState createState()=>_AdminMainPageState();
 }
 
+enum ResultDialogkun{
+  Yes,
+  No
+}
 class _AdminMainPageState extends State<AdminMainPage>{
   List<String> adminids=[
     "oV5XxRCtnMcG67wfICx9dTTYpHk2"
@@ -44,16 +48,28 @@ class _AdminMainPageState extends State<AdminMainPage>{
                         leading: Icon(
                           Icons.source_outlined
                         ),
-                        onTap: (){
+                        onTap: () async{
                           HapticFeedback.heavyImpact();
-                          showDialog(context: context, builder: (BuildContext ckun) => new AlertDialog(
-                            content:Text("たくさん操作しないこと。いいね？"),
+                          ResultDialogkun resultkun=await showDialog(context: context, builder: (BuildContext ckun) => new AlertDialog(
+                            content:Text("たくさん操作しないこと。\nいいね？"),
                             title: Text("確認"),
                             actions: <Widget>[
-                              SimpleDialogOption(child: Text("Yes"),),
-                              SimpleDialogOption(child: Text("No"),)
+                              SimpleDialogOption(child: Text("Yes"),onPressed: () {
+                                Navigator.pop(ckun,ResultDialogkun.Yes);
+                              },),
+                              SimpleDialogOption(child: Text("No"),onPressed: () {
+                                Navigator.pop(ckun,ResultDialogkun.No);
+                              },)
                             ],
                           ));
+                          switch (resultkun){
+                            case ResultDialogkun.No:
+                              break;
+                            case ResultDialogkun.Yes:
+                              break;
+                            default:
+                              break;
+                          }
                         },
                       )
                     ]
