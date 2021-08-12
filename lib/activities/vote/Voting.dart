@@ -98,7 +98,6 @@ class _VotingPageState extends State<VotingPage>{
         .doc(widget.user_id)
         .set(
           {
-            "user_email":widget.user_email,
             "mvp":widget.MVPCls.index,
             "kyakuhon":widget.KyakuhonGoodCls.index,
             "goodcls":widget.bunkasailskun
