@@ -44,6 +44,17 @@ class _AdminMainPageState extends State<AdminMainPage>{
                         leading: Icon(
                           Icons.source_outlined
                         ),
+                        onTap: (){
+                          HapticFeedback.heavyImpact();
+                          showDialog(context: context, builder: (BuildContext ckun) => new AlertDialog(
+                            content:Text("たくさん操作しないこと。いいね？"),
+                            title: Text("確認"),
+                            actions: <Widget>[
+                              SimpleDialogOption(child: Text("Yes"),),
+                              SimpleDialogOption(child: Text("No"),)
+                            ],
+                          ));
+                        },
                       )
                     ]
                 );
