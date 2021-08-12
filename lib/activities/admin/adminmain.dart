@@ -38,6 +38,13 @@ class _AdminMainPageState extends State<AdminMainPage>{
               if(widget.user != null) {
                 return ListView(
                     children: [
+                      ListTile(
+                        title: Text("結果確認"),
+                        subtitle: Text("制限に引っかかるのでたくさん操作しないこと。"),
+                        leading: Icon(
+                          Icons.source_outlined
+                        ),
+                      )
                     ]
                 );
               }else{

@@ -465,7 +465,7 @@ class OtherPageState extends StatelessWidget{
               bool isenabled_secret=sprekun.getBool("secret_enabled") ?? false;
               if(isenabled_secret == true){
                 return ListTile(
-                    leading: Icon(Icons.description),
+                    leading: Icon(Icons.room_preferences_outlined),
                     title:Text("Secret Menu"),
                     subtitle: Text("Secret Menu"),
                     onTap:() async{
