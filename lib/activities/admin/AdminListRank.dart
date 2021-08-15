@@ -8,7 +8,7 @@ class _AdminListRankState extends State<AdminListRankPage>{
     return Scaffold(
       appBar: AppBar(title: Text("Rank List"),),
       body:FutureBuilder(
-        
+
       )
     );
   }
