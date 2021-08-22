@@ -232,7 +232,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
                   ),
                 ),
                 Center(
-                  child:Text("\n良かった脚本作者がいるクラス\n",style:TextStyle(fontSize: 20)),
+                  child:Text("\n構成•脚本が良かったクラス\n",style:TextStyle(fontSize: 20)),
                 ),
                 TextField(readOnly: true,
                   controller: kyakuhonCls1Controller,
