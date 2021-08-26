@@ -91,7 +91,7 @@ class _VotingPageState extends State<VotingPage>{
   }
   Future<bool> sendKun(BuildContext context) async{
     bool resultdata=true;
-    if(UniversalPlatform.isAndroid == true){
+    //if(UniversalPlatform.isAndroid == true){
       resultdata=true;
       await FirebaseFirestore.instance
         .collection("votes")
@@ -103,9 +103,9 @@ class _VotingPageState extends State<VotingPage>{
             "goodcls":widget.bunkasailskun
           }
         );
-    }else{
+    /*}else{
       resultdata=false;
-    }
+    }*/
     return resultdata;
   }
 }
