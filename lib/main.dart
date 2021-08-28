@@ -269,9 +269,10 @@ class _HomeKunItemBuilder extends StatelessWidget{
       case 1:
         return
           InkWell(
-              onTap: (){
+              onTap: () async{
                 HapticFeedback.heavyImpact();
                 Navigator.push(context,MaterialPageRoute(builder: (conkun) => BunkaMapPage()));
+                //await launch("https://www.fcp.or.jp/culture/facility/#place00");
               },
               child:Card(
                   child:Column(

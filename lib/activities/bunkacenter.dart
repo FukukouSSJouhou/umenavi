@@ -16,10 +16,25 @@ class _BunkaMapPageState extends State<BunkaMapPage>{
       ),
       body: ListView(
         children: [
+          Text("\n\n\n"),
+          Center(
+            child: Text("3Fと、\n", style: TextStyle(
+              fontSize: 25
+          ),
+          )
+          ),
+          Center(child:
+            Text("2Fの大ホール以外は使用しません\n",style: TextStyle(
+              fontSize: 25
+            ),)
+          ),
           GestureDetector(
           behavior: HitTestBehavior.opaque,
-            child:Image.asset("images/maps/1F.png")
-          )
+            child:Image(
+                image:NetworkImage("https://www.fcp.or.jp/culture/img/facility/2x/zenkan_sm@2x.jpg")
+            )
+          ),
+          Text("\n\n\n\n\n\n"),
         ],
       ),
     );
