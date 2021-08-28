@@ -2,6 +2,7 @@ import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
 import 'package:UMENAVI/activities/admin/Check_CodePage.dart';
 import 'package:UMENAVI/activities/admin/adminmain.dart';
+import 'package:UMENAVI/activities/bunkacenter.dart';
 import 'package:UMENAVI/activities/helps/HelpMainPage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
 import 'package:UMENAVI/activities/vote/VoteMain.dart';
@@ -270,7 +271,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
           InkWell(
               onTap: (){
                 HapticFeedback.heavyImpact();
-                Navigator.push(context,MaterialPageRoute(builder: (conkun) => SchoolMapPage()));
+                Navigator.push(context,MaterialPageRoute(builder: (conkun) => BunkaMapPage()));
               },
               child:Card(
                   child:Column(
@@ -281,8 +282,8 @@ class _HomeKunItemBuilder extends StatelessWidget{
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
-                            title:Text("校内マップ"),
-                            subtitle: Text("校内マップが表示できます"),
+                            title:Text("文化センターマップ"),
+                            subtitle: Text("文化センターマップが表示可能"),
                           )
                       )
                     ],
@@ -361,8 +362,8 @@ class _HomeKunItemBuilder extends StatelessWidget{
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
-                            title:Text("事後アンケート"),
-                            subtitle: Text("事後アンケート"),
+                            title:Text("投票"),
+                            subtitle: Text("14:20~15:30"),
                           )
                       )
                     ],
