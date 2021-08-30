@@ -366,7 +366,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
           var prefkun=await SharedPreferences.getInstance();
           if(prefkun.getInt("dataver") ==null){
             FirebaseStorage storage = FirebaseStorage.instance;
-            Reference textRef = storage.ref().child("baien_data_min.json");
+            Reference textRef = storage.ref("baien_data_min.json");
             var data = await textRef.getData();
             Map<String, dynamic> map = jsonDecode(ascii.decode(data));
             prefkun.setInt("dataver", map["version"]);
