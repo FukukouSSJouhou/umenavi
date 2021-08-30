@@ -366,14 +366,24 @@ class _VoteMainPageState extends State<VoteMainPage>{
           var prefkun=await SharedPreferences.getInstance();
           var dataverkun=prefkun.getInt("dataver");
           if( dataverkun ==null){
-
+            FirebaseStorage storage = FirebaseStorage.instance;
+            Reference textRef = storage.ref("baien_data_min.json");
+            var data = await textRef.getData();
+            var stringdt=Encoding.getByName("UTF-8").decode(data);
+            Map<String, dynamic> map = jsonDecode(stringdt);
+            await prefkun.setString("jsondata", stringdt);
+            await prefkun.setInt("dataver", map["version"]);
           }else if (dataverkun != dver){
             FirebaseStorage storage = FirebaseStorage.instance;
             Reference textRef = storage.ref().child("baien_data_min.json");
             var data = await textRef.getData();
-            Map<String, dynamic> map = jsonDecode(ascii.decode(data));
+            var stringdt=Encoding.getByName("UTF-8").decode(data);
+            Map<String, dynamic> map = jsonDecode(stringdt);
+            await prefkun.setString("jsondata", stringdt);
             await prefkun.setInt("dataver", map["version"]);
-            await prefkun.setString("jsondata", ascii.decode(data));
+          }else{
+
+            print("aaaa\n");
           }
           print(prefkun.getString("jsondata"));
         }else{
