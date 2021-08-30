@@ -4,6 +4,7 @@ import 'package:UMENAVI/activities/vote/Voting.dart';
 import 'package:UMENAVI/bunkasaidbkun/BunkasaiDBSet.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flame/layer/layer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class VoteMainPage extends StatefulWidget{
   User user;
   GoogleSignInAccount googleUser;
+  Map<String,dynamic> Syaki_N_____PowerMap;
   GoogleSignInAuthentication googleAuth;
   UserCredential usercre;
   User fbuser;
@@ -31,8 +33,10 @@ class _VoteMainPageState extends State<VoteMainPage>{
   var goodCls2Controller=TextEditingController();
   var goodCls3Controller=TextEditingController();
   BunkasaiClasskun MVPCls1=BunkasaiClasskun.NONEKUN;
+  String MVPMems="";
   BunkasaiClasskun KyakuhonCls1=BunkasaiClasskun.NONEKUN;
   var mvpCls1Controller=TextEditingController();
+  var mvpMemController=TextEditingController();
   var kyakuhonCls1Controller=TextEditingController();
   @override
   void initState() {
@@ -64,6 +68,12 @@ class _VoteMainPageState extends State<VoteMainPage>{
         text:BunkasaiClasskun_to_str(MVPCls1),
         selection: TextSelection.fromPosition(
             TextPosition(offset: "aaa".length)
+        )
+    );
+    mvpMemController.value=TextEditingValue(
+        text:MVPMems,
+        selection: TextSelection.fromPosition(
+            TextPosition(offset: "aaa                      ".length)
         )
     );
     kyakuhonCls1Controller.value=TextEditingValue(
@@ -238,6 +248,46 @@ class _VoteMainPageState extends State<VoteMainPage>{
                 Center(
                   child:Text("\n良かった出演者\n",style:TextStyle(fontSize: 20)),
                 ),
+                TextField(readOnly: true,
+                  controller: mvpMemController,
+                  onTap: (){
+                    List<Text> mvpmems=[];/*
+                    BunkasaiClasskun.values.forEach((valueniki) {
+                      if (valueniki != BunkasaiClasskun.NONEKUN) {
+                        mvpcls.add(Text(BunkasaiClasskun_to_str(valueniki)));
+                      }
+                    }
+                    );*/
+                    if(MVPCls1 != BunkasaiClasskun.NONEKUN){
+                      var classmem_lskun=widget.Syaki_N_____PowerMap["class_vip"][MVPCls1]["members"];
+                      for(var s in classmem_lskun){
+                        print(s);
+                      }
+                    }
+                    showModalBottomSheet(context: context, builder: (_ct){
+                      return Container(
+                        child:GestureDetector(
+                            onTap: () => Navigator.pop(_ct),
+                            child:CupertinoPicker(itemExtent: 30,
+                              backgroundColor: Colors.white,
+                              children: mvpmems,
+                              onSelectedItemChanged: (int vl){
+                                setState(() {
+                                  MVPMems=mvpmems[vl].data;
+                                });
+                              },
+                            )
+                        ),
+                        height: MediaQuery.of(context).size.height /3,
+
+                      );
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border:OutlineInputBorder(),
+                    labelText: "人名",
+                  ),
+                ),
                 Center(
                   child:Text("\n構成•脚本が良かったクラス\n",style:TextStyle(fontSize: 20)),
                 ),
@@ -385,7 +435,8 @@ class _VoteMainPageState extends State<VoteMainPage>{
 
             print("aaaa\n");
           }
-          print(prefkun.getString("jsondata"));
+          var jstr=prefkun.getString("jsondata");
+          widget.Syaki_N_____PowerMap=json.decode(jstr);
         }else{
 
           ScaffoldMessenger.of(context).showSnackBar(
