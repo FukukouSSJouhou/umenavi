@@ -11,8 +11,9 @@ class VotingPage extends StatefulWidget{
   final BunkasaiClasskun GoodCls3;
   final BunkasaiClasskun MVPCls;
   final BunkasaiClasskun KyakuhonGoodCls;
+  final String MVPMem;
   List<int> bunkasailskun=[];
-  VotingPage({Key key,@required this.user_id,@required this.user_email,@required this.GoodCls1,@required this.GoodCls2,@required this.GoodCls3,@required this.KyakuhonGoodCls,@required this.MVPCls}):super(key:key);
+  VotingPage({Key key,@required this.user_id,@required this.user_email,@required this.GoodCls1,@required this.GoodCls2,@required this.GoodCls3,@required this.KyakuhonGoodCls,@required this.MVPCls,@required this.MVPMem}):super(key:key);
   _VotingPageState createState() => _VotingPageState();
 }
 class _VotingPageState extends State<VotingPage>{
@@ -100,7 +101,8 @@ class _VotingPageState extends State<VotingPage>{
           {
             "mvp":widget.MVPCls.index,
             "kyakuhon":widget.KyakuhonGoodCls.index,
-            "goodcls":widget.bunkasailskun
+            "goodcls":widget.bunkasailskun,
+            "mvpmem":widget.MVPMem
           }
         );
     /*}else{

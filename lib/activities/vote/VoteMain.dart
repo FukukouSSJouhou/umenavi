@@ -214,6 +214,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
                 TextField(readOnly: true,
                   controller: mvpCls1Controller,
                   onTap: (){
+                    MVPMems="";
                     List<Text> mvpcls=[];
                     BunkasaiClasskun.values.forEach((valueniki) {
                       if (valueniki != BunkasaiClasskun.NONEKUN) {
@@ -259,9 +260,17 @@ class _VoteMainPageState extends State<VoteMainPage>{
                     }
                     );*/
                     if(MVPCls1 != BunkasaiClasskun.NONEKUN){
-                      var classmem_lskun=widget.Syaki_N_____PowerMap["class_vip"][MVPCls1]["members"];
+                      var indexkun=MVPCls1.index;
+                      var classmem_lskun=widget.Syaki_N_____PowerMap["class_vip"][indexkun]["members"];
+                      print("aaa222");
                       for(var s in classmem_lskun){
-                        print(s);
+                        mvpmems.add(Text(s));
+                      }
+                      if(MVPMems == ""){
+                        setState(() {
+                            MVPMems=mvpmems[0].data;
+                          }
+                        );
                       }
                     }
                     showModalBottomSheet(context: context, builder: (_ct){
@@ -360,7 +369,8 @@ class _VoteMainPageState extends State<VoteMainPage>{
                 return;
               }
               if(GoodCls1 == BunkasaiClasskun.NONEKUN || GoodCls2 == BunkasaiClasskun.NONEKUN || GoodCls3 == BunkasaiClasskun.NONEKUN
-              || KyakuhonCls1 == BunkasaiClasskun.NONEKUN || MVPCls1 == BunkasaiClasskun.NONEKUN){
+              || KyakuhonCls1 == BunkasaiClasskun.NONEKUN || MVPCls1 == BunkasaiClasskun.NONEKUN
+              || MVPMems == ""){
                 ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                         content: Text("全部記入してから送信しましょう。無効票はダメです。")
@@ -371,7 +381,7 @@ class _VoteMainPageState extends State<VoteMainPage>{
               Navigator.push(context,MaterialPageRoute(builder: (_) =>
                   VotingPage(user_email: widget.user.email,user_id: widget.user.uid,
                     GoodCls1: GoodCls1, GoodCls2: GoodCls2,GoodCls3: GoodCls3,
-                    KyakuhonGoodCls: KyakuhonCls1,MVPCls: MVPCls1,
+                    KyakuhonGoodCls: KyakuhonCls1,MVPCls: MVPCls1,MVPMem: MVPMems,
                   )
               ));
             },
