@@ -359,7 +359,7 @@ class _HomeKunItemBuilder extends StatelessWidget{
                   child:Column(
                     children: <Widget>[
                       /*SvgPicture.asset("images/icon/icon_111651_256.svg",semanticsLabel: "UMEYOKO",),*/
-                      Icon(Umenaviicon1.icon_111651_256,size:125),
+                      Icon(Icons.poll,size:125),
                       Container(
                           margin: EdgeInsets.all(10.0),
                           child:ListTile(
