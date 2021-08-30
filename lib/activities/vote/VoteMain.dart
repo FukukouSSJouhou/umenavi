@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:UMENAVI/activities/vote/Voting.dart';
 import 'package:UMENAVI/bunkasaidbkun/BunkasaiDBSet.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class VoteMainPage extends StatefulWidget{
   User user;
   GoogleSignInAccount googleUser;
@@ -232,6 +236,9 @@ class _VoteMainPageState extends State<VoteMainPage>{
                   ),
                 ),
                 Center(
+                  child:Text("\n良かった出演者\n",style:TextStyle(fontSize: 20)),
+                ),
+                Center(
                   child:Text("\n構成•脚本が良かったクラス\n",style:TextStyle(fontSize: 20)),
                 ),
                 TextField(readOnly: true,
@@ -355,6 +362,19 @@ class _VoteMainPageState extends State<VoteMainPage>{
           );
           widget.usercre = await widget.auth.signInWithCredential(widget.credential);
           widget.user = widget.usercre.user;
+          final int dver=0;
+          var prefkun=await SharedPreferences.getInstance();
+          if(prefkun.getInt("dataver") ==null){
+
+          }else if(prefkun.getInt("dataver") != dver){
+            FirebaseStorage storage = FirebaseStorage.instance;
+            Reference textRef = storage.ref().child("baien_data_min.json");
+            var data = await textRef.getData();
+            Map<String, dynamic> map = jsonDecode(ascii.decode(data));
+            prefkun.setInt("dataver", map["version"]);
+            prefkun.setString("jsondata", ascii.decode(data));
+          }
+          print(prefkun.getString("jsondata"));
         }else{
 
           ScaffoldMessenger.of(context).showSnackBar(
