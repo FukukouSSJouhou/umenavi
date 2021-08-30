@@ -33,7 +33,7 @@ import "web/LoadingClass.dart"
   if (dart.library.js) "web/webLoading.dart";
 
 String applicationName= "UMENAVI";
-const String applicationVersion= "Release Candidate 0.0.2.5 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
+const String applicationVersion= "Release 0.0.3.0 " + String.fromEnvironment("APPVER",defaultValue:"NOTSETVER");
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();

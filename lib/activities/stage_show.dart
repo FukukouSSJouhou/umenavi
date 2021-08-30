@@ -14,7 +14,9 @@ class _StageShowPageState extends State<StageShowPage>{
       body:ListView(
         children: [
           InkWell(
-            child:Text("NOT FOUND")
+            child:Center(
+              child: Text("データ不足により表示不可能です。\nお楽しみ下さい。"),
+            )
           )
         ],
       )

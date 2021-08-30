@@ -334,6 +334,9 @@ class _VoteMainPageState extends State<VoteMainPage>{
                     labelText: "クラス名",
                   ),
                 ),
+                Center(
+                  child: Text("\n\n",style:TextStyle(fontSize: 20)),
+                )
 
 
               ]

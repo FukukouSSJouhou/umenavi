@@ -30,8 +30,13 @@ class _SecretPageStates extends State<SecretPage>{
       body:ListView(
         children: <Widget>[
           Center(
-            child: Text("Secret Page!",style:
+            child: Text("\n\nSecret Page!",style:
               TextStyle(fontSize: 24),),
+          ),
+
+          Center(
+            child: Text("\n\n製作者はベンザインのランプシェードを所持しています。",style:
+            TextStyle(fontSize: 14),),
           )
         ],
       )
