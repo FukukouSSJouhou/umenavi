@@ -545,7 +545,7 @@ packages:
       path: "."
       ref: "202107270716"
       resolved-ref: "08b14791a7c9cc04d4b31d71ecd641875e123205"
-      url: "https://github.com/kahenteikou/flutter-tetris.git"
+      url: "https://github.com/kokkiemouse/flutter-tetris.git"
     source: git
     version: "1.0.0+1"
   typed_data:
