@@ -175,19 +175,19 @@ class _MyHomePageState extends State<MyHomePage> {
         items:const<BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon:Icon(Icons.home),
-            title:Text("Home")
+            label:"Home"
           ),
           BottomNavigationBarItem(
               icon:Icon(Icons.feed_outlined),
-              title:Text("News")
+              label:"News"
           ),
           BottomNavigationBarItem(
             icon:Icon(Umenaviicon1.games),
-            title:Text("Games")
+            label:"Games"
           ),
           BottomNavigationBarItem(
             icon:Icon(Icons.devices_other),
-            title:Text("Other")
+            label:"Other"
           )
         ],
         type:BottomNavigationBarType.fixed,

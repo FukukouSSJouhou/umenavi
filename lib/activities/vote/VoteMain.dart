@@ -4,7 +4,7 @@ import 'package:UMENAVI/activities/vote/Voting.dart';
 import 'package:UMENAVI/bunkasaidbkun/BunkasaiDBSet.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flame/layer/layer.dart';
+import 'package:flame/layers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
