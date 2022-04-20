@@ -1,21 +1,15 @@
 import 'package:UMENAVI/activities/AboutSourceCode.dart';
 import 'package:UMENAVI/activities/SchedulePage.dart';
-import 'package:UMENAVI/activities/admin/Check_CodePage.dart';
-import 'package:UMENAVI/activities/admin/adminmain.dart';
 import 'package:UMENAVI/activities/bunkacenter.dart';
 import 'package:UMENAVI/activities/helps/HelpMainPage.dart';
 import 'package:UMENAVI/activities/news/News.dart';
-import 'package:UMENAVI/activities/vote/VoteMain.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:UMENAVI/themes/ThemeModeNotifier.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,7 +31,6 @@ const String applicationVersion= "Release 0.0.3.0 " + String.fromEnvironment("AP
 String applicationLegalese="2021 Fukushima High School SS club Jouhouhan";
 Future main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   final prefs =await SharedPreferences.getInstance();
   final themeModeID=prefs.getInt(ThemeModeNotifier.selectedThemeKey);
   return runApp(
@@ -215,16 +208,6 @@ class _HomeKunItemBuilder extends StatelessWidget{
     :assert(index != null && context != null),
     super(key: key);
 
-  final _google_signin  = GoogleSignIn(scopes: [
-    'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
-  ]);
-  GoogleSignInAccount googleUser;
-  GoogleSignInAuthentication googleAuth;
-  AuthCredential credential;
-  final _auth=FirebaseAuth.instance;
-  UserCredential usercre;
-  User fbuser;
   @override
   Widget build(BuildContext context){
     switch(index){
@@ -345,10 +328,8 @@ class _HomeKunItemBuilder extends StatelessWidget{
           InkWell(
               onTap: () async{
                 HapticFeedback.heavyImpact();
-                if(true) {
-                  Navigator.push(context,MaterialPageRoute(builder: (con1) => VoteMainPage(
-                    auth: _auth,google_signin: _google_signin,
-                  )));
+                if(false) {
+
                 }else{
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("この機能は意図的に無効化されています"),)
@@ -399,16 +380,7 @@ class HomeKunPageState extends StatelessWidget{
     }
 }
 class OtherPageState extends StatelessWidget{
-  final _google_signin  = GoogleSignIn(scopes: [
-    'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
-  ]);
-  GoogleSignInAccount googleUser;
-  GoogleSignInAuthentication googleAuth;
-  AuthCredential credential;
-  final _auth=FirebaseAuth.instance;
-  UserCredential usercre;
-  User fbuser;
+
   Future<SharedPreferences> _get_prefs_int() async{
     return await SharedPreferences.getInstance();
   }
@@ -472,7 +444,6 @@ class OtherPageState extends StatelessWidget{
                     subtitle: Text("Secret Menu"),
                     onTap:() async{
                       HapticFeedback.heavyImpact();
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => new AdminMainPage(google_signin: _google_signin,auth: _auth,)));
                     }
                 );
               }else{
