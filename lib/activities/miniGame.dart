@@ -1,4 +1,3 @@
-import 'package:UMENAVI/activities/vote/VoteStart.dart';
 import 'package:UMENAVI/icons/umenaviicon1_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

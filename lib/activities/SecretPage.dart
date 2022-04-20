@@ -1,4 +1,3 @@
-import 'package:UMENAVI/activities/admin/Check_CodePage.dart';
 import 'package:UMENAVI/widgets/CustomAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,7 +23,7 @@ class _SecretPageStates extends State<SecretPage>{
         onTap: () async {
           _addCounter();
           if(_counter > 6){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Check_CodePage()));
+            //Navigator.push(context, MaterialPageRoute(builder: (_) => Check_CodePage()));
           }
         },),
       body:ListView(
